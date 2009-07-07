@@ -1,0 +1,11 @@
+# ChangeLog for dev-perl/HTML-Template-Pro
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*HTML-Template-Pro-0.75 (07 Jul 2009)
+
+  07 Jul 2009; Daniel Westermann-Clark <dwc@pobox.com>
+  -HTML-Template-Pro-0.72.ebuild, +HTML-Template-Pro-0.75.ebuild,
+  +metadata.xml:
+  Bump, convert to EAPI=2, and add metadata.xml
+
