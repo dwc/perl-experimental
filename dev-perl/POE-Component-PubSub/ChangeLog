@@ -1,0 +1,10 @@
+# ChangeLog for dev-perl/POE-Component-PubSub
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*POE-Component-PubSub-0.05 (08 Jul 2009)
+
+  08 Jul 2009; Daniel Westermann-Clark <dwc@pobox.com>
+  +POE-Component-PubSub-0.05.ebuild, +metadata.xml:
+  Add POE::Component::PubSub, new dependency for POE::Component::Jabber
+

@@ -1,0 +1,11 @@
+# ChangeLog for dev-perl/POE-Component-Jabber
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*POE-Component-Jabber-3.00 (08 Jul 2009)
+
+  08 Jul 2009; Daniel Westermann-Clark <dwc@pobox.com>
+  -POE-Component-Jabber-2.02.ebuild, -POE-Component-Jabber-2.03.ebuild,
+  +POE-Component-Jabber-3.00.ebuild, +metadata.xml:
+  Bump, convert to EAPI=2, and add metadata.xml
+
