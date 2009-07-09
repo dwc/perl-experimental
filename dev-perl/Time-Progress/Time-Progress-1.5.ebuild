@@ -1,19 +1,19 @@
-# Copyright Daniel Westermann-Clark <daniel at acceleration dot net>
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header$
+# $Header: $
 
+EAPI=2
+
+MODULE_AUTHOR=CADE
 inherit perl-module
 
 DESCRIPTION="Elapsed and estimated finish time reporting"
-HOMEPAGE="http://search.cpan.org/dist/${PN}/"
-SRC_URI="mirror://cpan/authors/id/C/CA/CADE/${P}.tar.gz"
-LICENSE="|| ( Artistic GPL-2 )"
 
 SLOT="0"
-KEYWORDS="amd64 x86"
-RESTRICT="mirror"
+LICENSE="|| ( Artistic GPL-2 )"
+KEYWORDS="~amd64 ~x86"
 SRC_TEST="do"
 
 IUSE=""
-RDEPEND="dev-lang/perl"
+RDEPEND=""
 DEPEND="${RDEPEND}"
