@@ -1,0 +1,10 @@
+# ChangeLog for dev-perl/Time-Format
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*Time-Format-1.11 (09 Jul 2009)
+
+  09 Jul 2009; Daniel Westermann-Clark <dwc@pobox.com>
+  -Time-Format-1.09.ebuild, +Time-Format-1.11.ebuild, +metadata.xml:
+  Bump, convert to EAPI=2, and add metadata.xml
+
