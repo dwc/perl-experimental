@@ -1,22 +1,21 @@
-# Copyright Daniel Westermann-Clark <daniel at acceleration dot net>
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header$
+# $Header: $
 
+EAPI=2
+
+MODULE_AUTHOR=SARTAK
 inherit perl-module
 
 DESCRIPTION="Perlish declarative templates"
-HOMEPAGE="http://search.cpan.org/dist/${PN}/"
-SRC_URI="mirror://cpan/authors/id/A/AL/ALEXMV/${P}.tar.gz"
-LICENSE="|| ( Artistic GPL-2 )"
 
 SLOT="0"
-KEYWORDS="amd64 x86"
-RESTRICT="mirror"
+LICENSE="|| ( Artistic GPL-2 )"
+KEYWORDS="~amd64 ~x86"
 SRC_TEST="do"
 
 IUSE="test"
-RDEPEND=">=dev-lang/perl-5.8.2
-	dev-perl/Class-Accessor
+RDEPEND="dev-perl/Class-Accessor
 	dev-perl/Class-Data-Inheritable
 	virtual/perl-Class-ISA
 	>=dev-perl/String-BufferStack-1.10"
@@ -24,5 +23,5 @@ DEPEND="${RDEPEND}
 	test? (
 		dev-perl/HTML-Lint
 		virtual/perl-Test-Simple
-		dev-perl/Test-Warn
+		>=dev-perl/Test-Warn-0.11
 	)"

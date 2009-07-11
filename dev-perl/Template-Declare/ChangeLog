@@ -1,0 +1,11 @@
+# ChangeLog for dev-perl/Template-Declare
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*Template-Declare-0.40 (11 Jul 2009)
+
+  11 Jul 2009; Daniel Westermann-Clark <dwc@pobox.com>
+  -Template-Declare-0.36.ebuild, +Template-Declare-0.40.ebuild,
+  +metadata.xml:
+  Bump, convert to EAPI=2, and add metadata.xml
+
