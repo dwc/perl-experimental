@@ -1,22 +1,15 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
-EAPI=2
-MODULE_AUTHOR=STEVAN
+
+MODULE_AUTHOR=JROCKWAY
 inherit perl-module
 
-DESCRIPTION="A minimal lightweight exception class"
+DESCRIPTION="build and evaluate include/exclude lists"
 LICENSE="|| ( Artistic GPL-2 )"
 
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-IUSE="test"
-RDEPEND="virtual/perl-Scalar-List-Utils"
-DEPEND="
-	${RDEPEND}
-	test? (
-		virtual/perl-Test-Simple
-	)
-"
-SRC_TEST=do
+IUSE=""
+DEPEND=""
