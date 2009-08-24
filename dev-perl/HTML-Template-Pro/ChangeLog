@@ -2,6 +2,12 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*HTML-Template-Pro-0.86 (24 Aug 2009)
+
+  24 Aug 2009; Daniel Westermann-Clark <dwc@pobox.com>
+  -HTML-Template-Pro-0.75.ebuild, +HTML-Template-Pro-0.86.ebuild:
+  Bump HTML-Template-Pro to 0.86 and remove version no longer on CPAN
+
 *HTML-Template-Pro-0.85 (13 Aug 2009)
 
   13 Aug 2009; Daniel Westermann-Clark <dwc@pobox.com>
