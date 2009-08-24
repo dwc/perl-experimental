@@ -3,19 +3,18 @@
 # $Header: $
 
 EAPI=2
-MODULE_AUTHOR=JROCKWAY
+MODULE_AUTHOR=CHROMATIC
 inherit perl-module
 
-DESCRIPTION="Test for valid YAML"
+DESCRIPTION="enable all of the features of Modern Perl with one command"
 LICENSE="|| ( Artistic GPL-2 )"
 
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
-RDEPEND="
-	virtual/perl-File-Spec
-	>=dev-perl/yaml-0.60
-"
-DEPEND="${RDEPEND}"
 
+IUSE="test"
+DEPEND="
+	test? ( virtual/perl-Test-Simple )
+"
+RDEPEND=""
 SRC_TEST="do"

@@ -3,19 +3,19 @@
 # $Header: $
 
 EAPI=2
-MODULE_AUTHOR=JROCKWAY
+MODULE_AUTHOR=SAPER
 inherit perl-module
 
-DESCRIPTION="Test for valid YAML"
+DESCRIPTION="See where you code warns and dies using stack traces"
 LICENSE="|| ( Artistic GPL-2 )"
 
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
-RDEPEND="
-	virtual/perl-File-Spec
-	>=dev-perl/yaml-0.60
-"
-DEPEND="${RDEPEND}"
 
+IUSE=""
+DEPEND=""
+# Test
+# Test-More
+RDEPEND=""
+# Data-Dumper
 SRC_TEST="do"

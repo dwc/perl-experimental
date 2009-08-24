@@ -3,19 +3,19 @@
 # $Header: $
 
 EAPI=2
-MODULE_AUTHOR=JROCKWAY
+MODULE_AUTHOR=ADAMK
 inherit perl-module
 
-DESCRIPTION="Test for valid YAML"
+DESCRIPTION="A date object with as little code as possible"
 LICENSE="|| ( Artistic GPL-2 )"
 
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
-RDEPEND="
-	virtual/perl-File-Spec
-	>=dev-perl/yaml-0.60
-"
-DEPEND="${RDEPEND}"
 
+IUSE=""
+DEPEND="
+	>=dev-lang/perl-5.004
+"
+# >=Test-More-0.47
+RDEPEND="${DEPEND}"
 SRC_TEST="do"

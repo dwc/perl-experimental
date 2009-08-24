@@ -3,19 +3,22 @@
 # $Header: $
 
 EAPI=2
-MODULE_AUTHOR=JROCKWAY
+MODULE_AUTHOR=TIMB
 inherit perl-module
 
-DESCRIPTION="Test for valid YAML"
+DESCRIPTION="Powerful feature-rich perl source code profiler"
 LICENSE="|| ( Artistic GPL-2 )"
 
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
-RDEPEND="
-	virtual/perl-File-Spec
-	>=dev-perl/yaml-0.60
-"
-DEPEND="${RDEPEND}"
 
+IUSE=""
+DEPEND="
+	virtual/perl-Getopt-Long
+"
+# List::Util => Perl
+# Test::More => Perl
+# XSLoader   => Perl
+
+RDEPEND="${DEPEND}"
 SRC_TEST="do"

@@ -3,19 +3,19 @@
 # $Header: $
 
 EAPI=2
-MODULE_AUTHOR=JROCKWAY
+MODULE_AUTHOR=INGY
 inherit perl-module
 
-DESCRIPTION="Test for valid YAML"
+DESCRIPTION="See your data in the nude"
 LICENSE="|| ( Artistic GPL-2 )"
 
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
-RDEPEND="
-	virtual/perl-File-Spec
-	>=dev-perl/yaml-0.60
-"
-DEPEND="${RDEPEND}"
 
+IUSE=""
+DEPEND="
+	dev-perl/yaml
+"
+# >=Test-More-0.47
+RDEPEND="${DEPEND}"
 SRC_TEST="do"
