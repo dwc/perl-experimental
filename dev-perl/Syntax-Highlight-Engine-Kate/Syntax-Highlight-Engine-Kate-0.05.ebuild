@@ -12,3 +12,5 @@ DESCRIPTION="a port to Perl of the syntax highlight engine of the Kate textedito
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
+
+SRC_TEST=do
