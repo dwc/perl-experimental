@@ -18,7 +18,7 @@ HOMEPAGE="http://padre.perlide.org/"
 
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="test"
 
 DEPEND="
 	>=dev-perl/Locale-Msgfmt-0.14
@@ -36,6 +36,7 @@ DEPEND="
 	>=dev-perl/File-Copy-Recursive-0.37
 	>=dev-perl/File-Find-Rule-0.30
 	>=dev-perl/File-HomeDir-0.84
+	>=dev-perl/File-Next-1.06
 	>=dev-perl/File-Remove-1.42
 	>=dev-perl/File-ShareDir-1.00
 	>=dev-perl/File-ShareDir-PAR-0.04
@@ -59,7 +60,7 @@ DEPEND="
 	>=dev-perl/Pod-Abstract-0.16
 	>=dev-perl/Pod-POM-0.17
 	>=virtual/perl-Pod-Simple-3.07
-	>=dev-perl/PPI-1.203
+	>=dev-perl/PPI-1.205
 	>=dev-perl/PPIx-EditorTools-0.04
 	>=dev-perl/Probe-Perl-0.01
 	>=virtual/perl-Storable-2.15
@@ -79,7 +80,33 @@ DEPEND="
 "
 RDEPEND="${DEPEND}"
 
-src_configure(){
-	unset DISPLAY
-	perl-module_src_configure
+x11_works(){
+	# If there is no xdpyinfo, 
+	# it will return 127
+	xset -q 1>/dev/null 2>&1
+	WORKS="$?"
+	if [[ "$WORKS" == "0" ]] ; then
+		einfo "X11 Works!"
+	else
+		einfo "X11 doesnt work"
+	fi
+	einfo "Display at: '${DISPLAY}'"
+	return $WORKS
 }
+
+src_configure(){
+	DISPLAY_COPY="$DISPLAY"
+	unset DISPLAY;
+	perl-module_src_configure
+	if use test && [[ "$DISPLAY_COPY" != ""  ]]; then
+		einfo "Bringing back Display Settings for later "
+		export DISPLAY="$DISPLAY_COPY"
+	fi
+}
+src_test(){
+	if  ! x11_works; then
+		unset DISPLAY
+	fi
+	perl-module_src_test
+}
+SRC_TEST=do

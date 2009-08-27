@@ -2,7 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
-  07 Jul 2009; Daniel Westermann-Clark <dwc@pobox.com>
-  IO-TieCombine-1.000.ebuild, +metadata.xml:
-  Convert to EAPI=2 and add metadata.xml
+*IO-TieCombine-1.000 (11 May 2009)
+
+  11 May 2009; Kent Fredric <kentfredric@gmail.com> +metadata.xml,
+  +IO-TieCombine-1.000.ebuild:
+  Added as a depend for Dist::Zilla
 
