@@ -1,0 +1,58 @@
+# ChangeLog for dev-perl/Dist-Zilla
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*Dist-Zilla-1.092400 (28 Aug 2009)
+
+  28 Aug 2009; Kent Fredric <kentfredric@gmail.com>
+  +Dist-Zilla-1.092400.ebuild:
+  Bumped
+
+*Dist-Zilla-1.092390 (28 Aug 2009)
+
+  28 Aug 2009; Kent Fredric <kentfredric@gmail.com>
+  +Dist-Zilla-1.092390.ebuild:
+  Bumped
+
+*Dist-Zilla-1.092310 (22 Aug 2009)
+
+  22 Aug 2009; Kent Fredric <kentfredric@gmail.com>
+  +Dist-Zilla-1.092310.ebuild:
+  Bumped
+
+*Dist-Zilla-1.092071 (29 Jul 2009)
+
+  29 Jul 2009; Kent Fredric <kentfredric@gmail.com>
+  +Dist-Zilla-1.092071.ebuild:
+  Bumped
+
+*Dist-Zilla-1.091610 (22 Jun 2009)
+
+  22 Jun 2009; Kent Fredric <kentfredric@gmail.com>
+  +Dist-Zilla-1.091610.ebuild:
+  Bumped
+
+*Dist-Zilla-1.091480 (01 Jun 2009)
+
+  01 Jun 2009; Kent Fredric <kentfredric@gmail.com>
+  +Dist-Zilla-1.091480.ebuild:
+  Bumped
+
+*Dist-Zilla-1.091440 (27 May 2009)
+
+  27 May 2009; Kent Fredric <kentfredric@gmail.com>
+  +Dist-Zilla-1.091440.ebuild:
+  Bumped
+
+*Dist-Zilla-1.091430 (24 May 2009)
+
+  24 May 2009; Kent Fredric <kentfredric@gmail.com>
+  +Dist-Zilla-1.091430.ebuild:
+  Bumped
+
+*Dist-Zilla-1.091260 (11 May 2009)
+
+  11 May 2009; Kent Fredric <kentfredric@gmail.com> +metadata.xml,
+  +Dist-Zilla-1.091260.ebuild:
+  Added
+
