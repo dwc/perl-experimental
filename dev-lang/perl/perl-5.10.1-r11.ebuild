@@ -6,7 +6,7 @@ EAPI=2
 
 inherit eutils alternatives flag-o-matic toolchain-funcs multilib
 
-PATCH_VER=2
+PATCH_VER=5
 
 PERL_OLDVERSEN="5.10.0"
 
@@ -33,7 +33,8 @@ COMMON_DEPEND="berkdb? ( sys-libs/db )
 	sys-libs/zlib"
 DEPEND="${COMMON_DEPEND}
 	elibc_FreeBSD? ( sys-freebsd/freebsd-mk-defs )"
-RDEPEND="${COMMON_DEPEND}"
+RDEPEND="${COMMON_DEPEND}
+	!<sys-devel/libperl-5.10.1-r10"
 PDEPEND=">=app-admin/perl-cleaner-1.03"
 
 dual_scripts() {
@@ -63,12 +64,26 @@ pkg_setup() {
 	LIBPERL="libperl$(get_libname ${MY_PV})"
 
 	if use ithreads ; then
+		ewarn "THREADS WARNING:"
 		ewarn "PLEASE NOTE: You are compiling ${MY_P} with"
 		ewarn "interpreter-level threading enabled."
 		ewarn "Threading is not supported by all applications "
 		ewarn "that compile against perl. You use threading at "
 		ewarn "your own discretion. "
+		echo
 		epause 5
+	fi
+	if has_version dev-lang/perl ; then
+		if (   use ithreads && ! built_with_use dev-lang/perl ithreads ) || \
+		   ( ! use ithreads &&   built_with_use dev-lang/perl ithreads ) || \
+		   (   use debug    && ! built_with_use dev-lang/perl debug    ) || \
+		   ( ! use debug    &&   built_with_use dev-lang/perl debug    ) ; then
+			ewarn "TOGGLED USE-FLAGS WARNING:"
+			ewarn "You changed one of the use-flags ithreads or debug."
+			ewarn "You must rebuild all perl-modules installed."
+			ewarn "Use: perl-cleaner --???"
+			epause
+		fi
 	fi
 }
 
@@ -125,6 +140,8 @@ src_configure() {
 		GZIP_OS_CODE = AUTO_DETECT
 	EOF
 
+	export OTHERLDFLAGS="${LDFLAGS}"
+
 	case ${CHOST} in
 		*-freebsd*)   osname="freebsd" ;;
 		*-dragonfly*) osname="dragonfly" ;;
@@ -142,6 +159,9 @@ src_configure() {
 	else
 		myarch=${CHOST}
 		myarch="${myarch%%-*}-${osname}"
+	fi
+	if use debug ; then
+		myarch="${myarch}-debug"
 	fi
 
 	# allow either gdbm to provide ndbm (in <gdbm/ndbm.h>) or db1
@@ -167,7 +187,7 @@ src_configure() {
 	fi
 
 	if use debug ; then
-		append-cflags="-g"
+		append-cflags "-g"
 		myconf -DDEBUGGING
 	fi
 
@@ -186,7 +206,7 @@ src_configure() {
 		-Duseshrplib \
 		-Darchname="${myarch}" \
 		-Dcc="$(tc-getCC)" \
-		-Dccflags="${CFLAGS}" \
+		-Doptimize="${CFLAGS}" \
 		-Dscriptdir=/usr/bin \
 		-Dprefix='/usr' \
 		-Dvendorprefix='/usr' \
@@ -203,6 +223,9 @@ src_configure() {
 		-Dd_semctl_semun \
 		-Dinc_version_list="$inclist" \
 		-Dcf_by='Gentoo' \
+		-Dmyhostname='localhost' \
+		-Dperladmin='root@localhost' \
+		-Dinstallusrbinperl='n' \
 		-Ud_csh \
 		-Uusenm \
 		"${myconf[@]}" || die "Unable to configure"
@@ -210,7 +233,7 @@ src_configure() {
 
 src_test() {
 #	use elibc_uclibc && export MAKEOPTS="${MAKEOPTS} -j1"
-	TEST_JOBS=$(echo -j1 ${MAKEOPTS} | sed 's/.*\(-j[[:space:]]*\|--jobs=\)\([[:digit:]]\+\).*/\2/' ) \
+	TEST_JOBS=$(echo -j1 ${MAKEOPTS} | sed -r 's/.*(-j[[:space:]]*|--jobs=)([[:digit:]]+).*/\2/' ) \
 		make -j1 test_harness || die "test failed"
 }
 
@@ -375,8 +398,8 @@ src_remove_dual_scripts() {
 		for i in "$@" ; do
 			ff=`echo ${ROOT}/usr/share/man/man1/${i}-${ver}-${P}.1*`
 			ff=${ff##*.1}
-			alternatives_auto_makesym "/usr/bin/${i}" "/usr/bin/${i}-*"
-			alternatives_auto_makesym "/usr/share/man/man1/${i}.1${ff}" "/usr/share/man/man1/${i}-*"
+			alternatives_auto_makesym "/usr/bin/${i}" "/usr/bin/${i}-[0-9]*"
+			alternatives_auto_makesym "/usr/share/man/man1/${i}.1${ff}" "/usr/share/man/man1/${i}-[0-9]*"
 		done
 	else
 		for i in "$@" ; do

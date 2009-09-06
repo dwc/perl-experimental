@@ -131,14 +131,30 @@ perl-module_src_compile() {
 	fi
 }
 
+# For testers:
+#  This code attempts to work out your threadingness from MAKEOPTS
+#  and apply them to Test::Harness.
+#
+#  If you want more verbose testing, set TEST_VERBOSE=1
+#  in your bashrc | /etc/make.conf | ENV
+#
+# For ebuild writers:
+#  If a package doesn't build with mulitthreaded tests enabled,
+#  this should be considered a bug, but for a temporary workaround,
+#  add NO_TEST_MULTI=1 to your ebuild.
+#
+
 perl-module_src_test() {
-	VERBOSE=${TEST_VERBOSE:-0}
 	if [[ ${SRC_TEST} == "do" ]] ; then
+		if has "${TEST_VERBOSE:-0}" 0 && has "${NO_TEST_MULTI:-0}" 0 ; then
+			export HARNESS_OPTIONS=j$(echo -j1 ${MAKEOPTS} | sed -r "s/.*(-j\s*|--jobs=)([0-9]+).*/\2/" )
+			einfo "Test::Harness Jobs=${HARNESS_OPTIONS}"
+		fi
 		${perlinfo_done} || perlinfo
 		if [[ -f Build ]] ; then
-			./Build test || die "test failed"
+			./Build test verbose=${TEST_VERBOSE:-0} || die "test failed"
 		elif [[ -f Makefile ]] ; then
-			emake test TEST_VERBOSE=${VERBOSE} || die "test failed"
+			emake test TEST_VERBOSE=${TEST_VERBOSE:-0} || die "test failed"
 		fi
 	fi
 }
@@ -236,10 +252,10 @@ linkduallifescripts() {
 	local i ff
 	if has "${EBUILD_PHASE:-none}" "postinst" "postrm" ; then
 		for i in "${DUALLIFESCRIPTS[@]}" ; do
-			alternatives_auto_makesym "/usr/bin/${i}" "/usr/bin/${i}-*"
-				ff=`echo "${ROOT}"/usr/share/man/man1/${i}-${PV}-${P}.1*`
-				ff=${ff##*.1}
-				alternatives_auto_makesym "/usr/share/man/man1/${i}.1${ff}" "/usr/share/man/man1/${i}-*"
+			alternatives_auto_makesym "/usr/bin/${i}" "/usr/bin/${i}-[0-9]*"
+			ff=`echo "${ROOT}"/usr/share/man/man1/${i}-${PV}-${P}.1*`
+			ff=${ff##*.1}
+			alternatives_auto_makesym "/usr/share/man/man1/${i}.1${ff}" "/usr/share/man/man1/${i}-[0-9]*"
 		done
 	else
 		pushd "${D}" > /dev/null
