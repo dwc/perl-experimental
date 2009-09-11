@@ -3,26 +3,23 @@
 # $Header: $
 
 EAPI=2
-
-MODULE_AUTHOR=CFRANKS
+MODULE_AUTHOR=FLORA
 inherit perl-module
 
-DESCRIPTION="HTML Form Creation, Rendering and Validation Framework"
+DESCRIPTION="Subroutine signatures with no source filter"
 LICENSE="|| ( Artistic GPL-2 )"
 
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-IUSE=""
+IUSE="test"
 RDEPEND="
-	dev-perl/DBD-SQLite
-	>=dev-perl/DBIx-Class-0.08106
-	>=dev-perl/HTML-FormFu-0.05000
+	>=dev-perl/B-Hooks-OP-Check-0.18
+	>=dev-perl/B-Hooks-OP-PPAddr-0.03
+	>=dev-perl/B-Hooks-Parser-0.07
+	>=dev-perl/B-Hooks-EndOfScope-0.08
 "
 DEPEND="
 	${RDEPEND}
-	test? (
-		dev-perl/DateTime-Format-SQLite
-	)
 "
-SRC_TEST=do
+SRC_TEST="do"
