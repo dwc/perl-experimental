@@ -29,35 +29,25 @@ IUSE="berkdb build debug doc gdbm ithreads"
 
 COMMON_DEPEND="berkdb? ( sys-libs/db )
 	gdbm? ( >=sys-libs/gdbm-1.8.3 )
+	>=sys-devel/libperl-5.10.1-r10
 	app-arch/bzip2
 	sys-libs/zlib"
 DEPEND="${COMMON_DEPEND}
 	elibc_FreeBSD? ( sys-freebsd/freebsd-mk-defs )"
-RDEPEND="${COMMON_DEPEND}
-	!<sys-devel/libperl-5.10.1-r10"
+RDEPEND="${COMMON_DEPEND}"
 PDEPEND=">=app-admin/perl-cleaner-1.03"
 
 dual_scripts() {
-	# - perl-core/Archive-Tar
-	src_remove_dual_scripts 1.52 ptar ptardiff
-	# - perl-core/Digest-SHA
-	src_remove_dual_scripts 5.47 shasum
-	# - perl-core/CPAN
-	src_remove_dual_scripts 1.9402 cpan
-	# - perl-core/CPANPLUS
-	src_remove_dual_scripts 0.88 cpanp cpan2dist cpanp-run-perl
-	# - perl-core/Encode
-	src_remove_dual_scripts 2.35 enc2xs piconv
-	# - perl-core/ExtUtils-MakeMaker
-	src_remove_dual_scripts 6.55_02 instmodsh
-	# - perl-core/Module-Build
-	src_remove_dual_scripts 0.34_02 config_data
-	# - perl-core/Module-CoreList
-	src_remove_dual_scripts 2.18 corelist
-	# - perl-core/PodParser
-	src_remove_dual_scripts 1.37 pod2usage podchecker podselect
-	# - perl-core/Test-Harness
-	src_remove_dual_scripts 3.17 prove
+	src_remove_dual_scripts perl-core/Archive-Tar        1.52    ptar ptardiff
+	src_remove_dual_scripts perl-core/Digest-SHA         5.47    shasum
+	src_remove_dual_scripts perl-core/CPAN               1.9402  cpan
+	src_remove_dual_scripts perl-core/CPANPLUS           0.88    cpanp cpan2dist cpanp-run-perl
+	src_remove_dual_scripts perl-core/Encode             2.35    enc2xs piconv
+	src_remove_dual_scripts perl-core/ExtUtils-MakeMaker 6.55_02 instmodsh
+	src_remove_dual_scripts perl-core/Module-Build       0.34_02 config_data
+	src_remove_dual_scripts perl-core/Module-CoreList    2.18    corelist
+	src_remove_dual_scripts perl-core/PodParser          1.37    pod2usage podchecker podselect
+	src_remove_dual_scripts perl-core/Test-Harness       3.17    prove
 }
 
 pkg_setup() {
@@ -74,17 +64,21 @@ pkg_setup() {
 		epause 5
 	fi
 	if has_version dev-lang/perl ; then
-		if (   use ithreads && ! built_with_use dev-lang/perl ithreads ) || \
-		   ( ! use ithreads &&   built_with_use dev-lang/perl ithreads ) || \
-		   (   use debug    && ! built_with_use dev-lang/perl debug    ) || \
-		   ( ! use debug    &&   built_with_use dev-lang/perl debug    ) ; then
+		# doesnot work
+		#if ! has_version dev-lang/perl[ithreads=,debug=] ; then
+		#if ! has_version dev-lang/perl[ithreads=] || ! has_version dev-lang/perl[debug=] ; then
+		if (   use ithreads && ! has_version dev-lang/perl[ithreads]   ) || \
+		   ( ! use ithreads &&   has_version dev-lang/perl[ithreads]   ) || \
+		   (   use debug    && ! has_version dev-lang/perl[debug]      ) || \
+		   ( ! use debug    &&   has_version dev-lang/perl[debug]      ) ; then
 			ewarn "TOGGLED USE-FLAGS WARNING:"
 			ewarn "You changed one of the use-flags ithreads or debug."
 			ewarn "You must rebuild all perl-modules installed."
-			ewarn "Use: perl-cleaner --???"
+			ewarn "Use: perl-cleaner --all"
 			epause
 		fi
 	fi
+	dual_scripts
 }
 
 src_prepare() {
@@ -134,7 +128,7 @@ src_configure() {
 	cat <<-EOF > "${S}/ext/Compress-Raw-Zlib/config.in"
 		BUILD_ZLIB = False
 		INCLUDE = /usr/include
-		LIB = /usr/{get_libdir}
+		LIB = /usr/$(get_libdir)
 
 		OLD_ZLIB = False
 		GZIP_OS_CODE = AUTO_DETECT
@@ -391,15 +385,23 @@ cleaner_msg() {
 }
 
 src_remove_dual_scripts() {
-	local i ver ff
-	ver="$1"
-	shift
+	local i pkg ver ff
+	pkg="$1"
+	ver="$2"
+	shift 2
 	if has "${EBUILD_PHASE:-none}" "postinst" "postrm" ;then
 		for i in "$@" ; do
 			ff=`echo ${ROOT}/usr/share/man/man1/${i}-${ver}-${P}.1*`
 			ff=${ff##*.1}
 			alternatives_auto_makesym "/usr/bin/${i}" "/usr/bin/${i}-[0-9]*"
 			alternatives_auto_makesym "/usr/share/man/man1/${i}.1${ff}" "/usr/share/man/man1/${i}-[0-9]*"
+		done
+	elif has "${EBUILD_PHASE:-none}" "setup" ; then
+		for i in "$@" ; do
+			if [[ -f /usr/bin/${i} && ! -h /usr/bin/${i} ]] ; then
+				ewarn "You must reinstall $pkg !"
+				break
+			fi
 		done
 	else
 		for i in "$@" ; do

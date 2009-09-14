@@ -13,8 +13,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="dev-perl/Class-Accessor
+RDEPEND="dev-perl/Class-Accessor
 	dev-perl/DBIx-Class"
-RDEPEND="${DEPEND}"
+DEPEND="${RDEPEND}"
 
 SRC_TEST=do
