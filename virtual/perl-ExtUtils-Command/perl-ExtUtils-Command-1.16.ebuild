@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-DESCRIPTION="Virtual for perl-core/ExtUtils-MakeMaker"
+DESCRIPTION="Virtual for perl-core/ExtUtils-Command"
 HOMEPAGE="http://www.gentoo.org/proj/en/perl/"
 SRC_URI=""
 
@@ -11,5 +11,4 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=""
-RDEPEND="~perl-core/ExtUtils-MakeMaker-${PV}"
+RDEPEND="|| ( ~dev-lang/perl-5.10.1 ~perl-core/ExtUtils-Command-${PV} )"

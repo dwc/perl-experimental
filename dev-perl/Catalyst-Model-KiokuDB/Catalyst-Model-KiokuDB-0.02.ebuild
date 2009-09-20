@@ -2,25 +2,25 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 EAPI=2
-MODULE_AUTHOR=BOBTFISH
+MODULE_AUTHOR=NUFFIN
 inherit perl-module
 
-DESCRIPTION="Convert MultiMarkdown syntax to (X)HTML"
+DESCRIPTION="use KiokuDB in your Catalyst apps"
 LICENSE="|| ( Artistic GPL-2 )"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
+IUSE=""
 COMMON_DEPEND="
-	>=dev-perl/Text-Markdown-1.0.24
+	dev-perl/KiokuX-Model
+	>=dev-perl/Catalyst-Runtime-5.8
+	dev-perl/Moose
+	dev-perl/Scope-Guard
+	dev-perl/Hash-Util-FieldHash-Compat
+	dev-perl/Catalyst-Plugin-Authentication
+	dev-perl/KiokuX-User
 "
 DEPEND="
 	${COMMON_DEPEND}
-	test? (
-		>=virtual/perl-Test-Simple-0.42
-		dev-perl/Test-Exception
-		dev-perl/List-MoreUtils
-		>=dev-perl/File-Slurp-9999.08
-	)
 "
 RDEPEND="
 	${COMMON_DEPEND}
