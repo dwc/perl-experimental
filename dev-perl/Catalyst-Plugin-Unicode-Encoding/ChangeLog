@@ -2,16 +2,9 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
-*Catalyst-Plugin-Unicode-Encoding-0.3 (11 Jul 2009)
+*Catalyst-Plugin-Unicode-Encoding-0.3 (08 Oct 2009)
 
-  11 Jul 2009; Daniel Westermann-Clark <dwc@pobox.com>
-  +Catalyst-Plugin-Unicode-Encoding-0.3.ebuild:
-  Add Catalyst::Plugin::Unicode::Encoding 0.3 for Catalyst 5.80000
-
-*Catalyst-Plugin-Unicode-Encoding-0.2 (11 Jul 2009)
-
-  11 Jul 2009; Daniel Westermann-Clark <dwc@pobox.com>
-  -Catalyst-Plugin-Unicode-Encoding-0.1.ebuild,
-  +Catalyst-Plugin-Unicode-Encoding-0.2.ebuild, +metadata.xml:
-  Bump, convert to EAPI=2, and add metadata.xml
+  08 Oct 2009; Michele Beltrame <m@cattlegrid.info>
+  +Catalyst-Plugin-Unicode-Encoding-0.3.ebuild, +metadata.xml:
+  Initial release
 
