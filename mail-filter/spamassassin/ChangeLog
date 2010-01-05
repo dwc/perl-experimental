@@ -1,0 +1,27 @@
+# ChangeLog for mail-filter/spamassassin
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  21 Dec 2009; David Abbott <dabbott@gentoo.org> files/3.2.5-spamd.init:
+  openrc rc-status fix
+
+  07 Dec 2009; David Abbott <dabbott@gentoo.org>
+  spamassassin-3.2.5-r2.ebuild, spamassassin-3.2.5-r3.ebuild:
+  fixed whitespace
+
+*spamassassin-3.2.5-r3 (07 Dec 2009)
+
+  07 Dec 2009; David Abbott <dabbott@gentoo.org>
+  +spamassassin-3.2.5-r3.ebuild:
+  removed missing tools doc bug 296031
+
+  03 Dec 2009; David Abbott <dabbott@gentoo.org>
+  spamassassin-3.2.5-r2.ebuild:
+  enabled install without doc use
+
+*spamassassin-3.2.5-r2 (26 Nov 2009)
+
+  26 Nov 2009; David Abbott <dabbott@gentoo.org> +files/3.2.5-spamd.init,
+  +spamassassin-3.2.5-r2.ebuild:
+  Added new init per bug 173759
+

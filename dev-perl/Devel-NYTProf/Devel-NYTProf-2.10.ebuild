@@ -20,7 +20,7 @@ RDEPEND="
 # Test::More => Perl
 # XSLoader   => Perl
 
-DEPEND="${DEPEND}
+DEPEND="${RDEPEND}
 	test? (
 		virtual/perl-Scalar-List-Utils
 		virtual/perl-Test-Simple

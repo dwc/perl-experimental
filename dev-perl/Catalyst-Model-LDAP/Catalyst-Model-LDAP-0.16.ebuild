@@ -1,7 +1,7 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
-
+EAPI=2
 MODULE_AUTHOR=DANIELTWC
 inherit perl-module
 
@@ -12,10 +12,15 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
 IUSE=""
-DEPEND="
-	dev-perl/Catalyst-Runtime
+RDEPEND="
+	>=dev-perl/Catalyst-Runtime-5.62
 	dev-perl/Class-Accessor
 	dev-perl/Class-C3
 	dev-perl/Data-Page
-	dev-perl/perl-ldap
+	>=dev-perl/perl-ldap-0.34
 "
+DEPEND="
+	${RDEPEND}
+	virtual/perl-Test-Simple
+"
+SRC_TEST=do
