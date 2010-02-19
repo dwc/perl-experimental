@@ -39,7 +39,7 @@ EXPORT_FUNCTIONS ${PERL_EXPF}
 
 DESCRIPTION="Based on the $ECLASS eclass"
 
-LICENSE="${LICENSE:-|| ( Artistic GPL-2 )}"
+LICENSE="${LICENSE:-|| ( Artistic GPL-1 GPL-2 GPL-3 )}"
 
 [[ -z "${SRC_URI}" && -z "${MODULE_A}" ]] && MODULE_A="${MY_P:-${P}}.tar.gz"
 [[ -z "${SRC_URI}" && -n "${MODULE_AUTHOR}" ]] && \
@@ -63,7 +63,7 @@ perl-module_src_unpack() {
 perl-module_src_prepare() {
 	debug-print-function $FUNCNAME "$@"
 	has src_prepare ${PERL_EXPF} && base_src_prepare
-	fixperlosxcrap
+	perl_fix_osx_extra
 	esvn_clean
 }
 
@@ -77,7 +77,8 @@ perl-module_src_prep() {
 	[[ ${SRC_PREP} = yes ]] && return 0
 	SRC_PREP="yes"
 
-	perlinfo
+	perl_set_version
+	perl_set_eprefix
 
 	export PERL_MM_USE_DEFAULT=1
 	# Disable ExtUtils::AutoInstall from prompting
@@ -101,7 +102,7 @@ perl-module_src_prep() {
 	elif [[ -f Makefile.PL ]] ; then
 		einfo "Using ExtUtils::MakeMaker"
 		set -- \
-			PREFIX=/usr \
+			PREFIX=${EPREFIX}/usr \
 			INSTALLDIRS=vendor \
 			INSTALLMAN3DIR='none' \
 			DESTDIR="${D}" \
@@ -118,7 +119,7 @@ perl-module_src_prep() {
 
 perl-module_src_compile() {
 	debug-print-function $FUNCNAME "$@"
-	perlinfo
+	perl_set_version
 
 	has src_configure ${PERL_EXPF} || perl-module_src_prep
 
@@ -162,7 +163,7 @@ perl-module_src_test() {
 			export HARNESS_OPTIONS=j$(echo -j1 ${MAKEOPTS} | sed -r "s/.*(-j\s*|--jobs=)([0-9]+).*/\2/" )
 			einfo "Test::Harness Jobs=${HARNESS_OPTIONS}"
 		fi
-		${perlinfo_done} || perlinfo
+		${perlinfo_done} || perl_set_version
 		if [[ -f Build ]] ; then
 			./Build test verbose=${TEST_VERBOSE:-0} || die "test failed"
 		elif [[ -f Makefile ]] ; then
@@ -173,7 +174,10 @@ perl-module_src_test() {
 
 perl-module_src_install() {
 	debug-print-function $FUNCNAME "$@"
-	perlinfo
+
+	perl_set_version
+	perl_set_eprefix
+
 	local f
 
 	if [[ -z ${mytargets} ]] ; then
@@ -191,36 +195,31 @@ perl-module_src_install() {
 			|| die "emake ${myinst} ${mytargets} failed"
 	fi
 
-	if [[ -d "${D}"/usr/share/man ]] ; then
-#		einfo "Cleaning out stray man files"
-		find "${D}"/usr/share/man -type f -name "*.3pm" -delete
-		find "${D}"/usr/share/man -depth -type d -empty -delete
-	fi
-
-	fixlocalpod
-	fixperlpacklist
-	fixperltemppath
+	perl_delete_module_manpages
+	perl_delete_localpod
+	perl_delete_packlist
+	perl_remove_temppath
 
 	for f in Change* CHANGES README* TODO FAQ ${mydoc}; do
 		[[ -s ${f} ]] && dodoc ${f}
 	done
 
-	linkduallifescripts
+	perl_link_duallife_scripts
 }
 
 perl-module_pkg_setup() {
 	debug-print-function $FUNCNAME "$@"
-	perlinfo
+	perl_set_version
 }
 
 perl-module_pkg_preinst() {
 	debug-print-function $FUNCNAME "$@"
-	perlinfo
+	perl_set_version
 }
 
 perl-module_pkg_postinst() {
 	debug-print-function $FUNCNAME "$@"
-	linkduallifescripts
+	perl_link_duallife_scripts
 }
 
 perl-module_pkg_prerm() {
@@ -229,5 +228,5 @@ perl-module_pkg_prerm() {
 
 perl-module_pkg_postrm() {
 	debug-print-function $FUNCNAME "$@"
-	linkduallifescripts
+	perl_link_duallife_scripts
 }

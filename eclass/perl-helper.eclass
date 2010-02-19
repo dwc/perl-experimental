@@ -4,6 +4,11 @@
 
 perlinfo() {
 	debug-print-function $FUNCNAME "$@"
+	perl_set_version
+}
+
+perl_set_version() {
+	debug-print-function $FUNCNAME "$@"
 	debug-print "$FUNCNAME: perlinfo_done=${perlinfo_done}"
 	${perlinfo_done} && return 0
 	perlinfo_done=true
@@ -20,14 +25,22 @@ perlinfo() {
 
 fixlocalpod() {
 	debug-print-function $FUNCNAME "$@"
-	find "${D}" -type f -name perllocal.pod -delete
-	find "${D}" -depth -mindepth 1 -type d -empty -delete
+	perl_delete_localpod
 }
 
-fixperlosxcrap() {
+perl_delete_localpod() {
+	debug-print-function $FUNCNAME "$@"
+	perl_set_eprefix
+
+	find "${ED}" -type f -name perllocal.pod -delete
+	find "${ED}" -depth -mindepth 1 -type d -empty -delete
+}
+
+perl_fix_osx_extra() {
 	debug-print-function $FUNCNAME "$@"
 
 	# Remove "AppleDouble encoded Macintosh file"
+	local f
 	find "${S}" -type f -name "._*" -print0 | while read -rd '' f ; do
 		einfo "Removing AppleDouble encoded Macintosh file: ${f#${S}/}"
 		rm -f "${f}"
@@ -40,8 +53,20 @@ fixperlosxcrap() {
 	done
 }
 
+perl_delete_module_manpages() {
+	debug-print-function $FUNCNAME "$@"
 
-fixperlpacklist() {
+	perl_set_eprefix
+
+	if [[ -d "${ED}"/usr/share/man ]] ; then
+#		einfo "Cleaning out stray man files"
+		find "${ED}"/usr/share/man -type f -name "*.3pm" -delete
+		find "${ED}"/usr/share/man -depth -type d -empty -delete
+	fi
+}
+
+
+perl_delete_packlist() {
 	debug-print-function $FUNCNAME "$@"
 	perlinfo
 	if [[ -d ${D}/${VENDOR_LIB} ]] ; then
@@ -51,9 +76,12 @@ fixperlpacklist() {
 	fi
 }
 
-fixperltemppath() {
+perl_remove_temppath() {
 	debug-print-function $FUNCNAME "$@"
-	find "${D}" -type f -not -name '*.so' -print0 | while read -rd '' f ; do
+
+	perl_set_eprefix
+
+	find "${ED}" -type f -not -name '*.so' -print0 | while read -rd '' f ; do
 		if file "${f}" | grep -q -i " text" ; then
 			grep -q "${D}" "${f}" && ewarn "QA: File contains a temporary path ${f}"
 			sed -i -e "s:${D}:/:g" "${f}"
@@ -62,22 +90,24 @@ fixperltemppath() {
 }
 
 
-linkduallifescripts() {
+perl_link_duallife_scripts() {
 	debug-print-function $FUNCNAME "$@"
 	if [[ ${CATEGORY} != perl-core ]] || ! has_version ">=dev-lang/perl-5.8.8-r8" ; then
 		return 0
 	fi
 
+	perl_set_eprefix
+
 	local i ff
 	if has "${EBUILD_PHASE:-none}" "postinst" "postrm" ; then
 		for i in "${DUALLIFESCRIPTS[@]}" ; do
 			alternatives_auto_makesym "/usr/bin/${i}" "/usr/bin/${i}-[0-9]*"
-			ff=`echo "${ROOT}"/usr/share/man/man1/${i}-${PV}-${P}.1*`
+			ff=`echo "${EROOT}"/usr/share/man/man1/${i}-${PV}-${P}.1*`
 			ff=${ff##*.1}
 			alternatives_auto_makesym "/usr/share/man/man1/${i}.1${ff}" "/usr/share/man/man1/${i}-[0-9]*"
 		done
 	else
-		pushd "${D}" > /dev/null
+		pushd "${ED}" > /dev/null
 		for i in $(find usr/bin -maxdepth 1 -type f 2>/dev/null) ; do
 			mv ${i}{,-${PV}-${P}} || die
 			DUALLIFESCRIPTS[${#DUALLIFESCRIPTS[*]}]=${i##*/}
@@ -87,4 +117,17 @@ linkduallifescripts() {
 		done
 		popd > /dev/null
 	fi
+}
+
+perl_set_eprefix() {
+	debug-print-function $FUNCNAME "$@"
+	case ${EAPI:-0} in
+		0|1|2)
+			if ! use prefix; then
+				EPREFIX=
+				ED=${D}
+				EROOT=${ROOT}
+			fi
+			;;
+	esac
 }
