@@ -1,8 +1,10 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nikto/nikto-2.03.ebuild,v 1.1 2009/03/20 16:02:06 dertobi123 Exp $
+# $Header: $
 
 EAPI=2
+
+inherit eutils
 
 DESCRIPTION="Web Server vulnerability scanner."
 HOMEPAGE="http://www.cirt.net/code/nikto.shtml"
@@ -13,16 +15,25 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="ssl"
 
-RDEPEND="dev-lang/perl
+DEPEND="dev-lang/perl
 		net-analyzer/nmap
 		ssl? (
 			dev-libs/openssl
 			dev-perl/Net-SSLeay
-		)"
+		)
+		>=net-libs/libwhisker-2.5"
+
+RDEPEND="${DEPEND}"
+
+src_prepare() {
+	rm docs/._* || die "removing osx files failed"
+	epatch "${FILESDIR}"/${PF}-PL.patch || die "patch failed"
+}
 
 src_install() {
 
-	insinto /etc
+	dodir /etc/nikto || die "dodir failed"
+	insinto /etc/nikto
 	doins "${FILESDIR}/nikto.conf" || die "doins failed"
 
 	dobin nikto.pl || die "dobin failed"
@@ -30,7 +41,11 @@ src_install() {
 
 	dodir /usr/share/nikto || die "dodir failed"
 	insinto /usr/share/nikto
-	doins -r plugins templates docs || die "doins failed"
+	doins docs/nikto.dtd || die "dodoc failed"
+
+	dodir /var/lib/nikto || die "dodir failed"
+	insinto /var/lib/nikto
+	doins -r templates plugins || die "doins failed"
 
 	dodoc docs/*.txt || die "dodoc failed"
 	dohtml docs/nikto_manual.html || die "dohtml failed"
@@ -38,5 +53,7 @@ src_install() {
 }
 
 pkg_postinst() {
-	elog 'Default configuration file is "/etc/nikto.conf"'
+	einfo "Removing bundled LW2.pm"
+	rm /var/lib/nikto/plugins/LW2.pm || die "removing bundled library failed"
+	elog 'Default configuration file is "/etc/nikto/nikto.conf"'
 }
