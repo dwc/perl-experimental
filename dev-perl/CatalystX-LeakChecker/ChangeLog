@@ -1,0 +1,10 @@
+# ChangeLog for dev-perl/CatalystX-LeakChecker
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*CatalystX-LeakChecker-0.06 (04 Apr 2010)
+
+  04 Apr 2010; Daniel Westermann-Clark <dwc@pobox.com>
+  +CatalystX-LeakChecker-0.06.ebuild, +metadata.xml:
+  Add CatalystX-LeakChecker
+
