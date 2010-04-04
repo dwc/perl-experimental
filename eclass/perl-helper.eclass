@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+[[ ${CATEGORY} == "perl-core" ]] && inherit alternatives
+
 perlinfo() {
 	debug-print-function $FUNCNAME "$@"
 	perl_set_version
@@ -30,10 +32,9 @@ fixlocalpod() {
 
 perl_delete_localpod() {
 	debug-print-function $FUNCNAME "$@"
-	perl_set_eprefix
 
-	find "${ED}" -type f -name perllocal.pod -delete
-	find "${ED}" -depth -mindepth 1 -type d -empty -delete
+	find "${D}" -type f -name perllocal.pod -delete
+	find "${D}" -depth -mindepth 1 -type d -empty -delete
 }
 
 perl_fix_osx_extra() {
@@ -44,11 +45,11 @@ perl_fix_osx_extra() {
 	find "${S}" -type f -name "._*" -print0 | while read -rd '' f ; do
 		einfo "Removing AppleDouble encoded Macintosh file: ${f#${S}/}"
 		rm -f "${f}"
-	#	f=${f#${S}/}
+		f=${f#${S}/}
 	#	f=${f//\//\/}
 	#	f=${f//\./\.}
 	#	sed -i "/${f}/d" "${S}"/MANIFEST || die
-		grep -q "${f#${S}/}" "${S}"/MANIFEST && \
+		grep -q "${f}" "${S}"/MANIFEST && \
 			elog "AppleDouble encoded Macintosh file in MANIFEST: ${f#${S}/}"
 	done
 }
@@ -68,7 +69,7 @@ perl_delete_module_manpages() {
 
 perl_delete_packlist() {
 	debug-print-function $FUNCNAME "$@"
-	perlinfo
+	perl_set_version
 	if [[ -d ${D}/${VENDOR_LIB} ]] ; then
 		find "${D}/${VENDOR_LIB}" -type f -a \( -name .packlist \
 			-o \( -name '*.bs' -a -empty \) \) -delete
@@ -79,16 +80,13 @@ perl_delete_packlist() {
 perl_remove_temppath() {
 	debug-print-function $FUNCNAME "$@"
 
-	perl_set_eprefix
-
-	find "${ED}" -type f -not -name '*.so' -print0 | while read -rd '' f ; do
+	find "${D}" -type f -not -name '*.so' -print0 | while read -rd '' f ; do
 		if file "${f}" | grep -q -i " text" ; then
 			grep -q "${D}" "${f}" && ewarn "QA: File contains a temporary path ${f}"
 			sed -i -e "s:${D}:/:g" "${f}"
 		fi
 	done
 }
-
 
 perl_link_duallife_scripts() {
 	debug-print-function $FUNCNAME "$@"

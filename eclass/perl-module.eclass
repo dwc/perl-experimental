@@ -13,7 +13,6 @@
 # modules, and their incorporation into the Gentoo Linux system.
 
 inherit perl-helper eutils base
-[[ ${CATEGORY} == "perl-core" ]] && inherit alternatives
 
 PERL_EXPF="src_unpack src_compile src_test src_install"
 
@@ -21,7 +20,7 @@ case "${EAPI:-0}" in
 	0|1)
 		PERL_EXPF="${PERL_EXPF} pkg_setup pkg_preinst pkg_postinst pkg_prerm pkg_postrm"
 		;;
-	2)
+	2|3)
 		PERL_EXPF="${PERL_EXPF} src_prepare src_configure"
 		[[ ${CATEGORY} == "perl-core" ]] && \
 			PERL_EXPF="${PERL_EXPF} pkg_postinst pkg_postrm"
@@ -32,6 +31,9 @@ case "${EAPI:-0}" in
 				RDEPEND="${DEPEND}"
 				;;
 		esac
+		;;
+	*)
+		DEPEND="EAPI-UNSUPPORTED"
 		;;
 esac
 
