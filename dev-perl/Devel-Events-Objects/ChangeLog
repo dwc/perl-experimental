@@ -1,8 +1,0 @@
-# ChangeLog for dev-perl/Devel-Events-Objects
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-  11 Jul 2009; Daniel Westermann-Clark <dwc@pobox.com>
-  Devel-Events-Objects-0.05.ebuild, +metadata.xml:
-  Convert to EAPI=2 and add metadata.xml
-
