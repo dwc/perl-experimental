@@ -1,21 +1,24 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
+EAPI=3
 
-MODULE_AUTHOR=BBC
+MODULE_AUTHOR="BBC"
 inherit perl-module
 
-DESCRIPTION="A simple set of building blocks for both unit and runtime testing"
+DESCRIPTION="Simple set of building blocks for both unit and runtime testing"
 
+LICENSE="GPL-2"
 SLOT="0"
-LICENSE="|| ( Artistic GPL-2 )"
 KEYWORDS="~amd64 ~x86"
-SRC_TEST="do"
-
 IUSE="test"
-RDEPEND="dev-perl/Log-Trace
-	virtual/perl-Getopt-Long"
+
+RDEPEND="dev-perl/Log-Trace"
 DEPEND="${RDEPEND}
-	test? ( virtual/perl-Test-Simple )"
+	test? (
+		dev-perl/Test-Pod
+		dev-perl/Test-Pod-Coverage
+	)"
+
+SRC_TEST="do"
