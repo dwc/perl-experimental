@@ -2,6 +2,60 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  14 Apr 2011; Kent Fredric <kentfredric@gmail.com>
+  Dist-Zilla-Plugin-MetaProvides-1.120.448.60.ebuild,
+  Dist-Zilla-Plugin-MetaProvides-1.120.602.120.ebuild,
+  Dist-Zilla-Plugin-MetaProvides-1.120.605.10.ebuild:
+  fixdep Dist-Zilla-Util-EmulatePhase
+
+  11 Apr 2011; Kent Fredric <kentfredric@gmail.com>
+  -Dist-Zilla-Plugin-MetaProvides-1.120.445.180.ebuild:
+  gone on cpan
+
+*Dist-Zilla-Plugin-MetaProvides-1.120.605.10 (09 Apr 2011)
+
+  09 Apr 2011; Torsten Veller <tove@gentoo.org>
+  +Dist-Zilla-Plugin-MetaProvides-1.120.605.10.ebuild:
+  Version bump
+
+  07 Apr 2011; Kent Fredric <kentfredric@gmail.com>
+  Dist-Zilla-Plugin-MetaProvides-1.120.445.180.ebuild,
+  Dist-Zilla-Plugin-MetaProvides-1.120.448.60.ebuild,
+  Dist-Zilla-Plugin-MetaProvides-1.120.602.120.ebuild:
+  Fixdep Dist-Zilla-Util-Test-KENTNL
+
+  06 Apr 2011; Kent Fredric <kentfredric@gmail.com>
+  Dist-Zilla-Plugin-MetaProvides-1.120.448.60.ebuild,
+  Dist-Zilla-Plugin-MetaProvides-1.120.602.120.ebuild:
+  Fixdep on Plugin::MetaProvides::{Package,Class} ( PDEPS )
+
+*Dist-Zilla-Plugin-MetaProvides-1.120.602.120 (06 Apr 2011)
+
+  06 Apr 2011; Kent Fredric <kentfredric@gmail.com>
+  +Dist-Zilla-Plugin-MetaProvides-1.120.602.120.ebuild:
+  Bump
+
+*Dist-Zilla-Plugin-MetaProvides-1.120.448.60 (06 Apr 2011)
+*Dist-Zilla-Plugin-MetaProvides-1.120.445.180 (06 Apr 2011)
+*Dist-Zilla-Plugin-MetaProvides-1.110.444.50 (06 Apr 2011)
+
+  06 Apr 2011; Kent Fredric <kentfredric@gmail.com>
+  +Dist-Zilla-Plugin-MetaProvides-1.110.444.50.ebuild,
+  +Dist-Zilla-Plugin-MetaProvides-1.120.445.180.ebuild,
+  +Dist-Zilla-Plugin-MetaProvides-1.120.448.60.ebuild,
+  -Dist-Zilla-Plugin-MetaProvides-1.11044405.ebuild,
+  -Dist-Zilla-Plugin-MetaProvides-1.12044518.ebuild,
+  -Dist-Zilla-Plugin-MetaProvides-1.12044806.ebuild:
+  migrate
+
+  12 Feb 2011; Kent Fredric <kentfredric@gmail.com>
+  Dist-Zilla-Plugin-MetaProvides-1.12044806.ebuild:
+  Fix depends for real this time
+
+  11 Feb 2011; Kent Fredric <kentfredric@gmail.com>
+  Dist-Zilla-Plugin-MetaProvides-1.12044806.ebuild:
+  make dzil >=4.200.4 a provider for metanoindex
+
   02 Jan 2011; Kent Fredric <kentfredric@gmail.com>
   -Dist-Zilla-Plugin-MetaProvides-1.11034201.ebuild:
   Gone on CPAN

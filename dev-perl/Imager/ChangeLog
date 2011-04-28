@@ -2,6 +2,38 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  17 Mar 2011; Kent Fredric <kentfredric@gmail.com> -Imager-0.790.0.ebuild,
+  -Imager-0.800.0.ebuild:
+  Gone on CPAN
+
+*Imager-0.810.0 (16 Mar 2011)
+*Imager-0.800.0 (16 Mar 2011)
+*Imager-0.790.0 (16 Mar 2011)
+*Imager-0.750.0 (16 Mar 2011)
+
+  16 Mar 2011; Kent Fredric <kentfredric@gmail.com> -Imager-0.750.ebuild,
+  +Imager-0.750.0.ebuild, -Imager-0.790.ebuild, +Imager-0.790.0.ebuild,
+  -Imager-0.800.ebuild, +Imager-0.800.0.ebuild, -Imager-0.810.ebuild,
+  +Imager-0.810.0.ebuild:
+  Addzero
+
+*Imager-0.820.0 (16 Mar 2011)
+
+  16 Mar 2011; Kent Fredric <kentfredric@gmail.com> +Imager-0.820.0.ebuild:
+  Bump
+
+*Imager-0.810 (15 Feb 2011)
+
+  15 Feb 2011; Kent Fredric <kentfredric@gmail.com> +Imager-0.810.ebuild:
+  Bump. Tests pass for me
+
+*Imager-0.790 (15 Feb 2011)
+*Imager-0.750 (15 Feb 2011)
+
+  15 Feb 2011; Kent Fredric <kentfredric@gmail.com> -Imager-0.75.ebuild,
+  -Imager-0.79.ebuild, +Imager-0.750.ebuild, +Imager-0.790.ebuild:
+  Migrating remaining
+
 *Imager-0.800 (18 Jan 2011)
 
   18 Jan 2011; Torsten Veller <tove@gentoo.org> +Imager-0.800.ebuild:

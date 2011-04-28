@@ -58,7 +58,11 @@ if [[ -n ${MY_PN} || -n ${MY_PV} || -n ${MODULE_VERSION} ]] ; then
 	: ${MY_P:=${MY_PN:-${PN}}-${MY_PV:-${MODULE_VERSION:-${PV}}}}
 	S=${MY_S:-${WORKDIR}/${MY_P}}
 fi
-[[ -z "${SRC_URI}" && -z "${MODULE_A}" ]] && MODULE_A="${MY_P:-${P}}.tar.gz"
+
+[[ -n ${MODULE_DZIL_TRIAL} ]] && S="${S%-TRIAL}"
+
+[[ -z "${SRC_URI}" && -z "${MODULE_A}" ]] && \
+	MODULE_A="${MY_P:-${P}}.${MODULE_A_EXT:-tar.gz}"
 [[ -z "${SRC_URI}" && -n "${MODULE_AUTHOR}" ]] && \
 	SRC_URI="mirror://cpan/authors/id/${MODULE_AUTHOR:0:1}/${MODULE_AUTHOR:0:2}/${MODULE_AUTHOR}/${MODULE_SECTION:+${MODULE_SECTION}/}${MODULE_A}"
 [[ -z "${HOMEPAGE}" ]] && \
@@ -97,7 +101,7 @@ perl-module_src_prep() {
 	perl_set_version
 	perl_set_eprefix
 
-	export PERL_MM_USE_DEFAULT=1
+	[[ -z ${pm_echovar} ]] && export PERL_MM_USE_DEFAULT=1
 	# Disable ExtUtils::AutoInstall from prompting
 	export PERL_EXTUTILS_AUTOINSTALL="--skipdeps"
 

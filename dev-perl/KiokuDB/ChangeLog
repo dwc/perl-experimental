@@ -1,6 +1,39 @@
 # ChangeLog for dev-perl/KiokuDB
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  05 Apr 2011; Kent Fredric <kentfredric@gmail.com> KiokuDB-0.480.ebuild,
+  KiokuDB-0.490.ebuild, KiokuDB-0.500.ebuild, KiokuDB-0.510.0.ebuild:
+  Fixdep Cache-Ref
+
+  04 Apr 2011; Kent Fredric <kentfredric@gmail.com> KiokuDB-0.420.ebuild,
+  KiokuDB-0.480.ebuild, KiokuDB-0.490.ebuild, KiokuDB-0.500.ebuild,
+  KiokuDB-0.510.0.ebuild:
+  Fixdep: YAML-LibYAML
+
+*KiokuDB-0.510.0 (01 Apr 2011)
+
+  01 Apr 2011; Torsten Veller <tove@gentoo.org> +KiokuDB-0.510.0.ebuild:
+  Version bump
+
+  10 Mar 2011; Kent Fredric <kentfredric@gmail.com> KiokuDB-0.420.ebuild,
+  KiokuDB-0.480.ebuild, KiokuDB-0.490.ebuild, KiokuDB-0.500.ebuild:
+  Fixdep MooseX-Role-Parameterized
+
+  22 Jan 2011; Kent Fredric <kentfredric@gmail.com> KiokuDB-0.420.ebuild,
+  KiokuDB-0.480.ebuild, KiokuDB-0.490.ebuild, KiokuDB-0.500.ebuild:
+  Alternate deps for Class-MOP
+
+*KiokuDB-0.500 (21 Jan 2011)
+*KiokuDB-0.490 (21 Jan 2011)
+*KiokuDB-0.480 (21 Jan 2011)
+*KiokuDB-0.420 (21 Jan 2011)
+
+  21 Jan 2011; Kent Fredric <kentfredric@gmail.com> -KiokuDB-0.42.ebuild,
+  -KiokuDB-0.48.ebuild, -KiokuDB-0.49.ebuild, -KiokuDB-0.50.ebuild,
+  +KiokuDB-0.420.ebuild, +KiokuDB-0.480.ebuild, +KiokuDB-0.490.ebuild,
+  +KiokuDB-0.500.ebuild:
+  Migrate versions
 
 *KiokuDB-0.50 (04 Nov 2010)
 

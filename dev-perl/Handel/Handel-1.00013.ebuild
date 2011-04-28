@@ -1,7 +1,7 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
-
+EAPI=3
 MODULE_AUTHOR=CLACO
 inherit perl-module
 
@@ -26,16 +26,16 @@ DEPEND="
 	>=dev-perl/Module-Starter-1.54
 	>=dev-perl/DateTime-0.61
 	>=dev-perl/DateTime-Format-MySQL-0.04
-	>=dev-perl/Locale-Codes-2.07
+	>=dev-perl/Locale-Codes-2.70.0
 	>=dev-perl/Locale-Currency-Format-1.28
 	>=dev-perl/FormValidator-Simple-0.28
 	>=dev-perl/Finance-Currency-Convert-WebserviceX-0.07001
-	>=dev-perl/SQL-Translator-0.11006
+	>=dev-perl/SQL-Translator-0.110.60
 	>=dev-perl/DBD-SQLite-1.29
 	>=dev-perl/Data-Currency-0.04002
 	catalystframework? (
 		>=dev-perl/Catalyst-Runtime-5.800.250
-		>=dev-perl/Catalyst-Devel-1.28
+		>=dev-perl/Catalyst-Devel-1.280.0
 		>=dev-perl/Catalyst-View-TT-0.34
 		>=dev-perl/Catalyst-Plugin-Session-0.3
 		>=dev-perl/Catalyst-Plugin-Session-Store-File-0.18
@@ -44,3 +44,5 @@ DEPEND="
 		>=dev-perl/HTML-FillInForm-2.00
 	)
 "
+RDEPEND="${DEPEND}"
+#SRC_TEST="do"

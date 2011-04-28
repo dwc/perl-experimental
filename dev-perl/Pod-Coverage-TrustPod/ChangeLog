@@ -1,6 +1,26 @@
 # ChangeLog for dev-perl/Pod-Coverage-TrustPod
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  23 Apr 2011; Kent Fredric <kentfredric@gmail.com>
+  -Pod-Coverage-TrustPod-0.92.830.ebuild:
+  Gone on CPAN
+
+*Pod-Coverage-TrustPod-0.92.832 (23 Apr 2011)
+*Pod-Coverage-TrustPod-0.92.830 (23 Apr 2011)
+
+  23 Apr 2011; Kent Fredric <kentfredric@gmail.com>
+  +Pod-Coverage-TrustPod-0.92.830.ebuild,
+  +Pod-Coverage-TrustPod-0.92.832.ebuild,
+  -Pod-Coverage-TrustPod-0.092830.ebuild,
+  -Pod-Coverage-TrustPod-0.092832.ebuild:
+  Migrate to x.y.z
+
+*Pod-Coverage-TrustPod-0.100.0 (09 Apr 2011)
+
+  09 Apr 2011; Torsten Veller <tove@gentoo.org>
+  +Pod-Coverage-TrustPod-0.100.0.ebuild:
+  Version bump
 
 *Pod-Coverage-TrustPod-0.092832 (04 Nov 2010)
 

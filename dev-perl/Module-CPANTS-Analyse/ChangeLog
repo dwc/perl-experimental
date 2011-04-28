@@ -1,6 +1,38 @@
 # ChangeLog for dev-perl/Module-CPANTS-Analyse
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  12 Apr 2011; Kent Fredric <kentfredric@gmail.com>
+  Module-CPANTS-Analyse-0.850.0.ebuild,
+  Module-CPANTS-Analyse-0.850.0-r1.ebuild:
+  Fixdep(addzero)
+
+*Module-CPANTS-Analyse-0.850.0-r1 (12 Mar 2011)
+
+  12 Mar 2011; Kent Fredric <kentfredric@gmail.com>
+  +files/0.85/use_test_cpan_meta_yaml_version.patch,
+  +Module-CPANTS-Analyse-0.850.0-r1.ebuild:
+  Add patched version to work with newer Test::YAML changes
+
+*Module-CPANTS-Analyse-0.850.0 (12 Mar 2011)
+
+  12 Mar 2011; Kent Fredric <kentfredric@gmail.com>
+  -Module-CPANTS-Analyse-0.850.ebuild, +Module-CPANTS-Analyse-0.850.0.ebuild:
+  Fixdep CPAN-DistnameInfo , add .0
+
+*Module-CPANTS-Analyse-0.850 (15 Feb 2011)
+
+  15 Feb 2011; Kent Fredric <kentfredric@gmail.com>
+  -Module-CPANTS-Analyse-0.85.ebuild, +Module-CPANTS-Analyse-0.850.ebuild:
+  migrate to new version scheme
+
+  15 Feb 2011; Kent Fredric <kentfredric@gmail.com>
+  Module-CPANTS-Analyse-0.85.ebuild:
+  Fixdep Test-YAML-Meta
+
+  30 Jan 2011; Kent Fredric <kentfredric@gmail.com>
+  Module-CPANTS-Analyse-0.85.ebuild:
+  Fix dep on Array-Diff
 
   18 Aug 2010; Kent Fredric <kentfredric@gmail.com>
   Module-CPANTS-Analyse-0.85.ebuild:

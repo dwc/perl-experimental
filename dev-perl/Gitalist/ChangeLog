@@ -2,6 +2,36 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  22 Mar 2011; Kent Fredric <kentfredric@gmail.com> Gitalist-0.1.7.ebuild,
+  Gitalist-0.1.8.ebuild, Gitalist-0.2.5.ebuild, Gitalist-0.2.6.ebuild,
+  Gitalist-0.2.7.ebuild, Gitalist-0.2.8.ebuild, Gitalist-0.2.9.ebuild,
+  Gitalist-0.3.1.ebuild:
+  fixdep Catalyst-Plugin-SubRequest
+
+*Gitalist-0.3.1 (14 Mar 2011)
+
+  14 Mar 2011; Kent Fredric <kentfredric@gmail.com> +Gitalist-0.3.1.ebuild:
+  Bump
+
+*Gitalist-0.2.9 (10 Mar 2011)
+
+  10 Mar 2011; Kent Fredric <kentfredric@gmail.com> +Gitalist-0.2.9.ebuild:
+  Bump
+
+*Gitalist-0.2.8 (27 Feb 2011)
+
+  27 Feb 2011; Torsten Veller <tove@gentoo.org> +Gitalist-0.2.8.ebuild:
+  Version bump
+
+*Gitalist-0.2.7 (21 Feb 2011)
+
+  21 Feb 2011; Torsten Veller <tove@gentoo.org> +Gitalist-0.2.7.ebuild:
+  Version bump
+
+  22 Jan 2011; Kent Fredric <kentfredric@gmail.com> Gitalist-0.1.7.ebuild,
+  Gitalist-0.1.8.ebuild, Gitalist-0.2.5.ebuild, Gitalist-0.2.6.ebuild:
+  fix dep on MooseX-Declare and MooseX-MultiMethods
+
 *Gitalist-0.2.6 (14 Jan 2011)
 *Gitalist-0.2.5 (14 Jan 2011)
 *Gitalist-0.1.8 (14 Jan 2011)

@@ -1,6 +1,70 @@
 # ChangeLog for dev-perl/MooseX-NonMoose
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*MooseX-NonMoose-0.180.0 (23 Mar 2011)
+*MooseX-NonMoose-0.170.0 (23 Mar 2011)
+*MooseX-NonMoose-0.160.0 (23 Mar 2011)
+*MooseX-NonMoose-0.150.0 (23 Mar 2011)
+*MooseX-NonMoose-0.140.0 (23 Mar 2011)
+*MooseX-NonMoose-0.110.0 (23 Mar 2011)
+*MooseX-NonMoose-0.90.0 (23 Mar 2011)
+*MooseX-NonMoose-0.80.0 (23 Mar 2011)
+*MooseX-NonMoose-0.70.0 (23 Mar 2011)
+*MooseX-NonMoose-0.50.0 (23 Mar 2011)
+
+  23 Mar 2011; Kent Fredric <kentfredric@gmail.com>
+  -MooseX-NonMoose-0.50.ebuild, +MooseX-NonMoose-0.50.0.ebuild,
+  -MooseX-NonMoose-0.70.ebuild, +MooseX-NonMoose-0.70.0.ebuild,
+  -MooseX-NonMoose-0.80.ebuild, +MooseX-NonMoose-0.80.0.ebuild,
+  -MooseX-NonMoose-0.90.ebuild, +MooseX-NonMoose-0.90.0.ebuild,
+  -MooseX-NonMoose-0.110.ebuild, +MooseX-NonMoose-0.110.0.ebuild,
+  -MooseX-NonMoose-0.140.ebuild, +MooseX-NonMoose-0.140.0.ebuild,
+  -MooseX-NonMoose-0.150.ebuild, +MooseX-NonMoose-0.150.0.ebuild,
+  -MooseX-NonMoose-0.160.ebuild, +MooseX-NonMoose-0.160.0.ebuild,
+  -MooseX-NonMoose-0.170.ebuild, +MooseX-NonMoose-0.170.0.ebuild,
+  -MooseX-NonMoose-0.180.ebuild, +MooseX-NonMoose-0.180.0.ebuild:
+  Addzeros
+
+*MooseX-NonMoose-0.200.0 (23 Mar 2011)
+
+  23 Mar 2011; Kent Fredric <kentfredric@gmail.com>
+  +MooseX-NonMoose-0.200.0.ebuild:
+  Bump
+
+*MooseX-NonMoose-0.190.0 (04 Mar 2011)
+
+  04 Mar 2011; Torsten Veller <tove@gentoo.org>
+  +MooseX-NonMoose-0.190.0.ebuild:
+  Version bump
+
+*MooseX-NonMoose-0.180 (11 Feb 2011)
+
+  11 Feb 2011; Kent Fredric <kentfredric@gmail.com>
+  +MooseX-NonMoose-0.180.ebuild:
+  Bump to a Moose 2.0 compat version :D
+
+*MooseX-NonMoose-0.170 (21 Jan 2011)
+*MooseX-NonMoose-0.160 (21 Jan 2011)
+*MooseX-NonMoose-0.150 (21 Jan 2011)
+*MooseX-NonMoose-0.140 (21 Jan 2011)
+*MooseX-NonMoose-0.110 (21 Jan 2011)
+*MooseX-NonMoose-0.90 (21 Jan 2011)
+*MooseX-NonMoose-0.80 (21 Jan 2011)
+*MooseX-NonMoose-0.70 (21 Jan 2011)
+*MooseX-NonMoose-0.50 (21 Jan 2011)
+
+  21 Jan 2011; Kent Fredric <kentfredric@gmail.com>
+  -MooseX-NonMoose-0.05.ebuild, -MooseX-NonMoose-0.07.ebuild,
+  -MooseX-NonMoose-0.08.ebuild, -MooseX-NonMoose-0.09.ebuild,
+  -MooseX-NonMoose-0.11.ebuild, -MooseX-NonMoose-0.14.ebuild,
+  -MooseX-NonMoose-0.15.ebuild, -MooseX-NonMoose-0.16.ebuild,
+  -MooseX-NonMoose-0.17.ebuild, +MooseX-NonMoose-0.50.ebuild,
+  +MooseX-NonMoose-0.70.ebuild, +MooseX-NonMoose-0.80.ebuild,
+  +MooseX-NonMoose-0.90.ebuild, +MooseX-NonMoose-0.110.ebuild,
+  +MooseX-NonMoose-0.140.ebuild, +MooseX-NonMoose-0.150.ebuild,
+  +MooseX-NonMoose-0.160.ebuild, +MooseX-NonMoose-0.170.ebuild:
+  Migrate version scheme
 
 *MooseX-NonMoose-0.17 (09 Nov 2010)
 

@@ -2,6 +2,53 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Apr 2011; Kent Fredric <kentfredric@gmail.com>
+  Catalyst-Devel-1.270.0.ebuild, Catalyst-Devel-1.280.0.ebuild,
+  Catalyst-Devel-1.300.0.ebuild, Catalyst-Devel-1.310.0.ebuild,
+  Catalyst-Devel-1.320.0.ebuild, Catalyst-Devel-1.330.0.ebuild:
+  Fixdep File-ChangeNotify ( addzero)
+
+*Catalyst-Devel-1.330.0 (26 Mar 2011)
+
+  26 Mar 2011; Kent Fredric <kentfredric@gmail.com>
+  +files/1.33/MakeFile-Check.patch, +Catalyst-Devel-1.330.0.ebuild:
+  Bump
+
+*Catalyst-Devel-1.320.0 (22 Mar 2011)
+
+  22 Mar 2011; Kent Fredric <kentfredric@gmail.com>
+  +files/1.27/MakeFile-Check.patch, +files/1.28/MakeFile-Check.patch,
+  +files/1.30/MakeFile-Check.patch, +files/1.32/MakeFile-Check.patch,
+  -files/MakeFile-Check-1.27.patch, -files/MakeFile-Check-1.28.patch,
+  Catalyst-Devel-1.270.0.ebuild, +files/1.31/MakeFile-Check.patch,
+  Catalyst-Devel-1.300.0.ebuild, -files/MakeFile-Check-1.300.patch,
+  Catalyst-Devel-1.310.0.ebuild, -files/MakeFile-Check-1.310.patch,
+  +Catalyst-Devel-1.320.0.ebuild:
+  Bump, fix PATCHES var for existing
+
+*Catalyst-Devel-1.310.0 (22 Mar 2011)
+*Catalyst-Devel-1.300.0 (22 Mar 2011)
+*Catalyst-Devel-1.280.0 (22 Mar 2011)
+*Catalyst-Devel-1.270.0 (22 Mar 2011)
+
+  22 Mar 2011; Kent Fredric <kentfredric@gmail.com>
+  -Catalyst-Devel-1.27.ebuild, -Catalyst-Devel-1.28.ebuild,
+  +Catalyst-Devel-1.270.0.ebuild, +Catalyst-Devel-1.280.0.ebuild,
+  -Catalyst-Devel-1.300.ebuild, +Catalyst-Devel-1.300.0.ebuild,
+  -Catalyst-Devel-1.310.ebuild, +Catalyst-Devel-1.310.0.ebuild:
+  Migrate/Addzero
+
+  21 Jan 2011; Kent Fredric <kentfredric@gmail.com> Catalyst-Devel-1.27.ebuild,
+  Catalyst-Devel-1.28.ebuild, Catalyst-Devel-1.300.ebuild,
+  Catalyst-Devel-1.310.ebuild:
+  Fix depends on File-ChangeNotify
+
+*Catalyst-Devel-1.310 (20 Jan 2011)
+
+  20 Jan 2011; Torsten Veller <tove@gentoo.org> +Catalyst-Devel-1.310.ebuild,
+  +files/MakeFile-Check-1.310.patch:
+  Version bump
+
 *Catalyst-Devel-1.300 (18 Jan 2011)
 
   18 Jan 2011; Torsten Veller <tove@gentoo.org> +Catalyst-Devel-1.300.ebuild,

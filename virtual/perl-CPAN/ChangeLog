@@ -2,6 +2,30 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Apr 2011; Kent Fredric <kentfredric@gmail.com> perl-CPAN-1.960.0.ebuild:
+  Add 5.14 deps
+
+  26 Mar 2011; Kent Fredric <kentfredric@gmail.com> perl-CPAN-1.960.0.ebuild:
+  ~arch keywords
+
+*perl-CPAN-1.960.0 (12 Mar 2011)
+
+  12 Mar 2011; Kent Fredric <kentfredric@gmail.com> +perl-CPAN-1.960.0.ebuild:
+  Bump
+
+*perl-CPAN-1.946.400_rc (31 Jan 2011)
+*perl-CPAN-1.940.200-r1 (31 Jan 2011)
+
+  31 Jan 2011; Kent Fredric <kentfredric@gmail.com>
+  +perl-CPAN-1.940.200-r1.ebuild, +perl-CPAN-1.946.400_rc.ebuild:
+  Adding virtuals for betas
+
+*perl-CPAN-1.940.200 (31 Jan 2011)
+
+  31 Jan 2011; Kent Fredric <kentfredric@gmail.com> -perl-CPAN-1.94.02.ebuild,
+  +perl-CPAN-1.940.200.ebuild:
+  Migrate to new version scheme
+
   10 Jan 2011; Kent Fredric <kentfredric@gmail.com> perl-CPAN-1.94.02.ebuild:
   Fix for 5.12.3
 

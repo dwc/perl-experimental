@@ -21,7 +21,7 @@ COMMON_DEPEND="
 	>=dev-perl/namespace-clean-0.13
 	>=dev-perl/B-Hooks-EndOfScope-0.08
 	>=dev-perl/MooseX-Emulate-Class-Accessor-Fast-0.00903
-	>=dev-perl/Class-MOP-0.95
+	|| ( >=dev-perl/Moose-1.990 >=dev-perl/Class-MOP-0.95 )
 	>=dev-perl/Moose-1.03
 	>=dev-perl/MooseX-MethodAttributes-0.19
 	>=dev-perl/MooseX-Role-WithOverloading-0.05
@@ -32,7 +32,7 @@ COMMON_DEPEND="
 	dev-perl/Data-OptList
 
 	dev-perl/HTML-Parser
-	>=dev-perl/HTTP-Body-1.06
+	>=dev-perl/HTTP-Body-1.60.0
 	>=dev-perl/libwww-perl-5.814
 
 	>=dev-perl/HTTP-Request-AsCGI-1.0
@@ -55,7 +55,7 @@ COMMON_DEPEND="
 
 	dev-perl/B-Hooks-OP-Check-StashChange
 	!<=dev-perl/Catalyst-View-Mason-0.17
-	!<=dev-perl/Catalyst-Devel-1.19
+	!<=dev-perl/Catalyst-Devel-1.190.0
 
 "
 RDEPEND="

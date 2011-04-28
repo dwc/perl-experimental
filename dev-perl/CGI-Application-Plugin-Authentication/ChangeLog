@@ -1,6 +1,44 @@
 # ChangeLog for dev-perl/CGI-Application-Plugin-Authentication
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*CGI-Application-Plugin-Authentication-0.190.0 (12 Apr 2011)
+*CGI-Application-Plugin-Authentication-0.180.0 (12 Apr 2011)
+*CGI-Application-Plugin-Authentication-0.170.0 (12 Apr 2011)
+
+  12 Apr 2011; Kent Fredric <kentfredric@gmail.com>
+  -CGI-Application-Plugin-Authentication-0.170.ebuild,
+  +CGI-Application-Plugin-Authentication-0.170.0.ebuild,
+  -CGI-Application-Plugin-Authentication-0.180.ebuild,
+  +CGI-Application-Plugin-Authentication-0.180.0.ebuild,
+  -CGI-Application-Plugin-Authentication-0.190.ebuild,
+  +CGI-Application-Plugin-Authentication-0.190.0.ebuild:
+  Addzero, addzerodep -> Apache-Htpasswd
+
+  10 Mar 2011; Kent Fredric <kentfredric@gmail.com>
+  CGI-Application-Plugin-Authentication-0.170.ebuild,
+  CGI-Application-Plugin-Authentication-0.180.ebuild,
+  CGI-Application-Plugin-Authentication-0.190.ebuild:
+  fixdep on Color-Calc 
+
+*CGI-Application-Plugin-Authentication-0.190 (12 Feb 2011)
+*CGI-Application-Plugin-Authentication-0.180 (12 Feb 2011)
+*CGI-Application-Plugin-Authentication-0.170 (12 Feb 2011)
+
+  12 Feb 2011; Kent Fredric <kentfredric@gmail.com>
+  -CGI-Application-Plugin-Authentication-0.17.ebuild,
+  -CGI-Application-Plugin-Authentication-0.18.ebuild,
+  -CGI-Application-Plugin-Authentication-0.19.ebuild,
+  +CGI-Application-Plugin-Authentication-0.170.ebuild,
+  +CGI-Application-Plugin-Authentication-0.180.ebuild,
+  +CGI-Application-Plugin-Authentication-0.190.ebuild:
+  Migrate to new version scheme
+
+  12 Feb 2011; Kent Fredric <kentfredric@gmail.com>
+  CGI-Application-Plugin-Authentication-0.17.ebuild,
+  CGI-Application-Plugin-Authentication-0.18.ebuild,
+  CGI-Application-Plugin-Authentication-0.19.ebuild:
+  [fixdep] CGI-Application-Plugin-Authentication -> Apache-Htpasswd
 
 *CGI-Application-Plugin-Authentication-0.19 (14 Dec 2010)
 

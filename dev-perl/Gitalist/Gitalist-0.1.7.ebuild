@@ -25,7 +25,7 @@ RDEPEND="
 	dev-perl/Catalyst-Plugin-ConfigLoader
 	dev-perl/Catalyst-Plugin-StackTrace
 	dev-perl/Catalyst-Plugin-Static-Simple
-	>=dev-perl/Catalyst-Plugin-SubRequest-0.15
+	>=dev-perl/Catalyst-Plugin-SubRequest-0.150.0
 	dev-perl/Catalyst-Plugin-Unicode-Encoding
 	>=dev-perl/Catalyst-Runtime-5.800.150
 	>=dev-perl/Catalyst-View-Component-SubInclude-0.07
@@ -43,8 +43,8 @@ RDEPEND="
 	dev-perl/List-MoreUtils
 	dev-perl/Moose
 	dev-perl/Moose-Autobox
-	>=dev-perl/MooseX-Declare-0.33
-	>=dev-perl/MooseX-MultiMethods-0.10
+	>=dev-perl/MooseX-Declare-0.330
+	>=dev-perl/MooseX-MultiMethods-0.100
 	dev-perl/MooseX-Types
 	dev-perl/MooseX-Types-Common
 	dev-perl/MooseX-Types-Path-Class
