@@ -40,7 +40,7 @@ depend Config-INI # ^^
 depend Config-MVP 2.101.540 # ^^
 depend Config-MVP-Reader-INI 2
 # depend Data-Dumper # CORE
-depend Data-Section 0.004
+depend Data-Section 0.4.0
 depend DateTime 0.44
 depend-virtual ExtUtils-MakeMaker
 depend-virtual ExtUtils-Manifest 1.54
@@ -72,13 +72,13 @@ depend MooseX-Types-Perl
 depend PPI
 depend Params-Util
 depend Path-Class
-depend Perl-PrereqScanner 0.100830
+depend Perl-PrereqScanner 0.100.830
 depend Perl-Version
 depend Pod-Eventual 0.091480
 depend-virtual Scalar-List-Utils # Scalar::Util
 depend Software-License 0.101.370
 # Software::LicenseUtils -> depend Software-License
-depend String-Formatter 0.100680
+depend String-Formatter 0.100.680
 depend String-RewritePrefix 0.005
 depend Sub-Exporter
 # Sub::Exporter::Util -> depend Sub::Exporter

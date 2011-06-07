@@ -15,17 +15,17 @@ COMMON_DEPEND="
 	>=dev-perl/Authen-DecHpwd-2.3.0
 	>=dev-perl/Crypt-Blowfish-2.00
 	dev-perl/Crypt-DES
-	>=dev-perl/Crypt-Eksblowfish-0.008
+	>=dev-perl/Crypt-Eksblowfish-0.8.0
 	>=dev-perl/Crypt-MySQL-0.03
 	>=dev-perl/Crypt-PasswdMD5-1.0
 	>=dev-perl/Crypt-UnixCrypt_XS-0.08
 	dev-perl/Data-Entropy
-	>=virtual/perl-digest-base-1.00
+	>=virtual/perl-digest-base-1.0.0
 	>=dev-perl/Digest-MD4-1.2
 	>=virtual/perl-Digest-MD5-1.9953
 	dev-perl/Digest-SHA1
-	>=virtual/perl-MIME-Base64-2.21
-	>=dev-perl/Module-Runtime-0.0056
+	>=virtual/perl-MIME-Base64-2.210.0
+	>=dev-perl/Module-Runtime-0.5.600
 	dev-perl/Params-Classify
 "
 DEPEND="

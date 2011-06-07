@@ -5,7 +5,7 @@
 EAPI=4
 
 MODULE_AUTHOR=GETTY
-MODULE_VERSION=0.212
+MODULE_VERSION=0.213
 inherit perl-module
 
 DESCRIPTION="The Illicit Love Child of Moose and POE"

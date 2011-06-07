@@ -2,6 +2,46 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  06 Jun 2011; Kent Fredric <kentfredric@gmail.com>
+  -Mojolicious-1.320.0.ebuild, -Mojolicious-1.340.0.ebuild:
+  Gone On CPAN
+
+*Mojolicious-1.410.0 (03 Jun 2011)
+
+  03 Jun 2011; Torsten Veller <tove@gentoo.org> +Mojolicious-1.410.0.ebuild:
+  Version bump
+
+*Mojolicious-1.340.0 (24 May 2011)
+
+  24 May 2011; Kent Fredric <kentfredric@gmail.com>
+  +Mojolicious-1.340.0.ebuild:
+  Version BUmp
+
+  24 May 2011; Kent Fredric <kentfredric@gmail.com>
+  -Mojolicious-1.220.0.ebuild, -Mojolicious-1.300.0.ebuild:
+  Gone on CPAN
+
+*Mojolicious-1.320.0 (14 May 2011)
+
+  14 May 2011; Torsten Veller <tove@gentoo.org> +Mojolicious-1.320.0.ebuild:
+  Version bump
+
+*Mojolicious-1.300.0 (06 May 2011)
+
+  06 May 2011; Kent Fredric <kentfredric@gmail.com>
+  +Mojolicious-1.300.0.ebuild:
+  Bump
+
+  06 May 2011; Kent Fredric <kentfredric@gmail.com>
+  -Mojolicious-1.210.0.ebuild:
+  Gone on CPAN
+
+*Mojolicious-1.220.0 (05 May 2011)
+
+  05 May 2011; Kent Fredric <kentfredric@gmail.com>
+  +Mojolicious-1.220.0.ebuild:
+  Bump
+
   23 Apr 2011; Kent Fredric <kentfredric@gmail.com>
   -Mojolicious-1.150.0.ebuild:
   Gone on CPAN

@@ -13,16 +13,16 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 COMMON_DEPEND="
 	>=dev-perl/Dist-Zilla-2.100922
-	>=dev-perl/Dist-Zilla-Plugin-PodWeaver-3.092971
+	>=dev-perl/Dist-Zilla-Plugin-PodWeaver-3.92.971
 	dev-perl/Dist-Zilla-Plugin-Repository
 	dev-perl/Dist-Zilla-Plugin-CheckPrereqsIndexed
 	>=dev-perl/Dist-Zilla-Plugin-TaskWeaver-0.93.330
 	>=dev-perl/Dist-Zilla-Plugin-Git-1.102.810
 	dev-perl/Moose
 	dev-perl/Moose-Autobox
-	>=dev-perl/Pod-Elemental-0.092970
+	>=dev-perl/Pod-Elemental-0.92.970
 	dev-perl/Pod-Elemental-Transformer-List
-	>=dev-perl/Pod-Weaver-3.00310
+	>=dev-perl/Pod-Weaver-3.3.100
 "
 DEPEND="
 	${COMMON_DEPEND}

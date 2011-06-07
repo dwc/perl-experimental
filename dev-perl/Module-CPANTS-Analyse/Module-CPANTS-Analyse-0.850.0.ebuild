@@ -13,7 +13,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 COMMON_DEPEND="
 	>=dev-perl/Class-Accessor-0.19
-	>=dev-perl/Archive-Any-0.06
+	>=dev-perl/Archive-Any-0.60.0
 	>=virtual/perl-Archive-Tar-1.30
 	>=dev-perl/CPAN-DistnameInfo-0.60.0
 	>=virtual/perl-Pod-Simple-2.02
@@ -27,7 +27,7 @@ COMMON_DEPEND="
 	dev-perl/List-MoreUtils
 	dev-perl/File-Find-Rule
 	dev-perl/Readonly
-	>=dev-perl/Software-License-0.3
+	>=dev-perl/Software-License-0.3.0
 	dev-perl/File-Slurp
 	>=dev-perl/Text-CSV_XS-0.45
 	dev-perl/libwww-perl
