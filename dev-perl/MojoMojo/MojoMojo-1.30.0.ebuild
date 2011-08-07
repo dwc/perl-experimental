@@ -25,9 +25,9 @@ RDEPEND="
 	>=dev-perl/Cache-FastMmap-1.290.0
 	>=dev-perl/Catalyst-Runtime-5.700.100
 	>=dev-perl/Catalyst-Action-RenderView-0.07
-	>=dev-perl/Catalyst-Authentication-Store-DBIx-Class-0.101
+	>=dev-perl/Catalyst-Authentication-Store-DBIx-Class-0.101.0
 	>=dev-perl/Catalyst-Controller-HTML-FormFu-0.30.70
-	>=dev-perl/Catalyst-Model-DBIC-Schema-0.10
+	>=dev-perl/Catalyst-Model-DBIC-Schema-0.10.0
 	>=dev-perl/Catalyst-Plugin-Authentication-0.100.50
 	dev-perl/Catalyst-Plugin-Cache
 	>=dev-perl/Catalyst-Plugin-ConfigLoader-0.13
@@ -125,7 +125,7 @@ DEPEND="
 		>=dev-perl/SQL-Translator-0.90.6
 		>=dev-perl/Email-Sender-0.102.370
 		>=dev-perl/WWW-Mechanize-1.54
-		>=dev-perl/Test-WWW-Mechanize-Catalyst-0.51
+		>=dev-perl/Test-WWW-Mechanize-Catalyst-0.510.0
 		>=dev-perl/WWW-Mechanize-TreeBuilder-1.100
 	)
 	${RDEPEND}

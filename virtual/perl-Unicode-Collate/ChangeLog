@@ -2,6 +2,29 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*perl-Unicode-Collate-0.780.0 (03 Aug 2011)
+
+  03 Aug 2011; Kent Fredric <kentfredric@gmail.com>
+  +perl-Unicode-Collate-0.780.0.ebuild:
+  Version Bump
+
+  31 Jul 2011; Kent Fredric <kentfredric@gmail.com>
+  -perl-Unicode-Collate-0.760.0.ebuild:
+  No longer available on CPAN or in any perl prior to 5.15
+
+*perl-Unicode-Collate-0.770.0 (16 Jul 2011)
+
+  16 Jul 2011; Kent Fredric <kentfredric@gmail.com>
+  +perl-Unicode-Collate-0.770.0.ebuild:
+  Version Bump
+
+*perl-Unicode-Collate-0.730.0-r2 (17 Jun 2011)
+
+  17 Jun 2011; Kent Fredric <kentfredric@gmail.com>
+  -perl-Unicode-Collate-0.730.0-r1.ebuild,
+  +perl-Unicode-Collate-0.730.0-r2.ebuild:
+  Update for perl-5.14.1 with star-match
+
 *perl-Unicode-Collate-0.730.0-r1 (06 Jun 2011)
 
   06 Jun 2011; Kent Fredric <kentfredric@gmail.com>
