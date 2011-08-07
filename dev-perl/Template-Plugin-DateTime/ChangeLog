@@ -1,6 +1,13 @@
 # ChangeLog for dev-perl/Template-Plugin-DateTime
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*Template-Plugin-DateTime-0.06002 (07 Aug 2011)
+
+  07 Aug 2011; Daniel Westermann-Clark <dwc@pobox.com>
+  -Template-Plugin-DateTime-0.06001.ebuild,
+  +Template-Plugin-DateTime-0.06002.ebuild:
+  Bump
 
   11 Jul 2009; Daniel Westermann-Clark <dwc@pobox.com>
   Template-Plugin-DateTime-0.06001.ebuild, +metadata.xml:
