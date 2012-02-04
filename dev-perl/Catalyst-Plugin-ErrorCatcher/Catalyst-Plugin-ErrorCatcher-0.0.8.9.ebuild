@@ -30,11 +30,11 @@ DEPEND="${RDEPEND}
 	dev-perl/Catalyst-Runtime $(comment Catalyst)
 	$(comment Catalyst::Controller in Catalyst-Runtime)
 	>=dev-perl/Catalyst-Plugin-Authentication-0.100.100
-	>=dev-perl/Catalyst-Plugin-ConfigLoader-0.22 $(comment 0.220.0)
+	>=dev-perl/Catalyst-Plugin-ConfigLoader-0.220.0
 	dev-perl/Catalyst-Plugin-Session
 	dev-perl/Catalyst-Plugin-Session-State-Cookie
 	dev-perl/Catalyst-Plugin-Session-Store-File
-	>=dev-perl/Catalyst-Plugin-StackTrace-0.10 $(comment 0.100.0)
+	>=dev-perl/Catalyst-Plugin-StackTrace-0.100.0
 	>=dev-perl/Catalyst-Runtime-5.800.0
 	$(comment Catalyst::Test)
 	dev-perl/config-general $(comment Config::General)

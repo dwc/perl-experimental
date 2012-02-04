@@ -1,6 +1,73 @@
 # ChangeLog for dev-perl/Dist-Zilla-PluginBundle-Author-KENTNL
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  07 Jan 2012; Kent Fredric <kentfredric@gmail.com>
+  -Dist-Zilla-PluginBundle-Author-KENTNL-1.0.9.ebuild,
+  -Dist-Zilla-PluginBundle-Author-KENTNL-1.0.12.ebuild,
+  -Dist-Zilla-PluginBundle-Author-KENTNL-1.0.14.ebuild,
+  -Dist-Zilla-PluginBundle-Author-KENTNL-1.0.15.ebuild,
+  -Dist-Zilla-PluginBundle-Author-KENTNL-1.0.16.ebuild:
+  Removal as per package.mask warning
+
+*Dist-Zilla-PluginBundle-Author-KENTNL-1.1.1 (31 Oct 2011)
+
+  31 Oct 2011; Kent Fredric <kentfredric@gmail.com>
+  +Dist-Zilla-PluginBundle-Author-KENTNL-1.1.1.ebuild:
+  Version Bump
+
+  31 Oct 2011; Kent Fredric <kentfredric@gmail.com>
+  Dist-Zilla-PluginBundle-Author-KENTNL-1.0.9.ebuild,
+  Dist-Zilla-PluginBundle-Author-KENTNL-1.0.12.ebuild,
+  Dist-Zilla-PluginBundle-Author-KENTNL-1.0.14.ebuild,
+  Dist-Zilla-PluginBundle-Author-KENTNL-1.0.15.ebuild,
+  Dist-Zilla-PluginBundle-Author-KENTNL-1.0.16.ebuild,
+  Dist-Zilla-PluginBundle-Author-KENTNL-1.0.17.ebuild,
+  Dist-Zilla-PluginBundle-Author-KENTNL-1.0.21.ebuild:
+  Fixdep on Test-EOL, Plugin-Twitter, Plugin-ReadmeFromPod,
+  ReportVersions-Tiny, EOLTests
+
+*Dist-Zilla-PluginBundle-Author-KENTNL-1.0.21 (26 Sep 2011)
+
+  26 Sep 2011; Kent Fredric <kentfredric@gmail.com>
+  +Dist-Zilla-PluginBundle-Author-KENTNL-1.0.21.ebuild:
+  Version Bump
+
+  23 Sep 2011; Kent Fredric <kentfredric@gmail.com>
+  -Dist-Zilla-PluginBundle-Author-KENTNL-1.0.6.ebuild,
+  -Dist-Zilla-PluginBundle-Author-KENTNL-1.0.7.ebuild:
+  Gone on CPAN
+
+*Dist-Zilla-PluginBundle-Author-KENTNL-1.0.17 (02 Sep 2011)
+
+  02 Sep 2011; Kent Fredric <kentfredric@gmail.com>
+  +Dist-Zilla-PluginBundle-Author-KENTNL-1.0.17.ebuild:
+  Version Bump
+
+  02 Sep 2011; Kent Fredric <kentfredric@gmail.com>
+  Dist-Zilla-PluginBundle-Author-KENTNL-1.0.6.ebuild,
+  Dist-Zilla-PluginBundle-Author-KENTNL-1.0.7.ebuild,
+  Dist-Zilla-PluginBundle-Author-KENTNL-1.0.9.ebuild,
+  Dist-Zilla-PluginBundle-Author-KENTNL-1.0.12.ebuild,
+  Dist-Zilla-PluginBundle-Author-KENTNL-1.0.14.ebuild,
+  Dist-Zilla-PluginBundle-Author-KENTNL-1.0.15.ebuild,
+  Dist-Zilla-PluginBundle-Author-KENTNL-1.0.16.ebuild:
+  Fixdep -> Dist-Zilla-Plugin-Test-Perl-Critic
+
+*Dist-Zilla-PluginBundle-Author-KENTNL-1.0.16 (28 Aug 2011)
+
+  28 Aug 2011; Kent Fredric <kentfredric@gmail.com>
+  +Dist-Zilla-PluginBundle-Author-KENTNL-1.0.16.ebuild:
+  Version Bump
+
+  28 Aug 2011; Kent Fredric <kentfredric@gmail.com>
+  Dist-Zilla-PluginBundle-Author-KENTNL-1.0.6.ebuild,
+  Dist-Zilla-PluginBundle-Author-KENTNL-1.0.7.ebuild,
+  Dist-Zilla-PluginBundle-Author-KENTNL-1.0.9.ebuild,
+  Dist-Zilla-PluginBundle-Author-KENTNL-1.0.12.ebuild,
+  Dist-Zilla-PluginBundle-Author-KENTNL-1.0.14.ebuild,
+  Dist-Zilla-PluginBundle-Author-KENTNL-1.0.15.ebuild:
+  Fixdep ( pkgmoved ) -> CompileTests -> Test-Compile
 
 *Dist-Zilla-PluginBundle-Author-KENTNL-1.0.15 (26 Aug 2011)
 

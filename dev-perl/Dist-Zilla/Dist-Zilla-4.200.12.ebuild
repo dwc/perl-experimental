@@ -13,7 +13,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 cdepend-virtual ExtUtils-MakeMaker 6.56
-cdepend File-ShareDir-Install 0.03
+cdepend File-ShareDir-Install 0.30.0
 
 bdepend Test-Fatal
 bdepend-virtual Test-Simple 0.96 # Test::More
@@ -49,7 +49,7 @@ depend File-Find-Rule
 depend File-HomeDir
 depend-virtual File-Path
 depend File-ShareDir
-depend File-ShareDir-Install 0.03
+depend File-ShareDir-Install 0.30.0
 depend-virtual File-Spec
 depend-virtual File-Temp
 depend File-pushd
@@ -79,7 +79,7 @@ depend-virtual Scalar-List-Utils # Scalar::Util
 depend Software-License 0.101.370
 # Software::LicenseUtils -> depend Software-License
 depend String-Formatter 0.100.680
-depend String-RewritePrefix 0.005
+depend String-RewritePrefix 0.5.0
 depend Sub-Exporter
 # Sub::Exporter::Util -> depend Sub::Exporter
 depend TermReadKey # Term::ReadKey

@@ -1,6 +1,42 @@
 # ChangeLog for dev-perl/App-cpanminus
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*App-cpanminus-1.500.700 (07 Jan 2012)
+
+  07 Jan 2012; Kent Fredric <kentfredric@gmail.com>
+  +App-cpanminus-1.500.700.ebuild:
+  Version Bump
+
+*App-cpanminus-1.500.600 (05 Dec 2011)
+
+  05 Dec 2011; Kent Fredric <kentfredric@gmail.com>
+  +App-cpanminus-1.500.600.ebuild:
+  Version Bump
+
+*App-cpanminus-1.500.400 (11 Nov 2011)
+
+  11 Nov 2011; Kent Fredric <kentfredric@gmail.com>
+  +App-cpanminus-1.500.400.ebuild:
+  Version Bump
+
+*App-cpanminus-1.500.300 (24 Oct 2011)
+
+  24 Oct 2011; Kent Fredric <kentfredric@gmail.com>
+  +App-cpanminus-1.500.300.ebuild:
+  Version Bump.
+
+  Noteable enhancements vs pre-1.500:
+
+  * Supports MYMETA.json with spec 2.0
+
+  * Added --metacpan support
+
+  * Added --mirror-index, --skip-satisfied and --cascade-search
+
+  * Installs MYMETA.json into $ARCH/.meta
+
+  * Better -L handling.
 
 *App-cpanminus-1.490.100_rc (28 Jun 2011)
 
