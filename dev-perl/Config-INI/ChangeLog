@@ -1,6 +1,21 @@
 # ChangeLog for dev-perl/Config-INI
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*Config-INI-0.19.0 (12 Feb 2012)
+
+  12 Feb 2012; Kent Fredric <kentfredric@gmail.com> +Config-INI-0.19.0.ebuild:
+  Version Bump
+
+*Config-INI-0.17.0 (12 Feb 2012)
+
+  12 Feb 2012; Kent Fredric <kentfredric@gmail.com> -Config-INI-0.017.ebuild,
+  +Config-INI-0.17.0.ebuild:
+  Migrate Old versions to x.y.z
+
+  08 Feb 2012; Kent Fredric <kentfredric@gmail.com> -Config-INI-0.015.ebuild,
+  -Config-INI-0.016.ebuild:
+  Gone on CPAN
 
 *Config-INI-0.18.0 (03 Jun 2011)
 
